@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import PageHeader from '@/components/PageHeader'
 import { services } from '@/data/services'
-import { Star, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Our Escort Services | Saumya Basu Escorts Mumbai',
@@ -42,10 +43,14 @@ export default function ServicesPage() {
                 href={`/${service.slug}`}
                 className="bg-white rounded-lg shadow-sm hover:shadow-lg transition-all group border border-gray-100 overflow-hidden"
               >
-                <div className="bg-gradient-to-br from-red-50 to-red-100 p-8 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm group-hover:bg-primary transition-colors">
-                    <Star size={24} className="text-primary group-hover:text-white transition-colors" />
-                  </div>
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all" />
                 </div>
                 <div className="p-5">
                   <h3 className="font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">{service.name}</h3>

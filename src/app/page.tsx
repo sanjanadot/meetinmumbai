@@ -152,12 +152,17 @@ export default function HomePage() {
               <Link
                 key={service.slug}
                 href={`/${service.slug}`}
-                className="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:text-primary transition-all border border-gray-100 group"
+                className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all border border-gray-100 group"
               >
-                <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:text-white transition-colors">
-                  <Star size={20} className="text-primary group-hover:text-white" />
+                <div className="relative h-28 overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.shortName}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-                <p className="text-xs font-semibold text-gray-700 group-hover:text-primary leading-tight">{service.shortName}</p>
+                <p className="text-xs font-semibold text-gray-700 group-hover:text-primary leading-tight text-center px-2 py-2">{service.shortName}</p>
               </Link>
             ))}
           </div>

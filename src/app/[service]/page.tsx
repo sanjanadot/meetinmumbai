@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Image from 'next/image'
 import Link from 'next/link'
 import PageHeader from '@/components/PageHeader'
 import { getServiceBySlug, services } from '@/data/services'
@@ -56,24 +57,37 @@ export default function ServicePage({ params }: Props) {
 
       {/* Hero */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            {service.name} in Mumbai
-          </h1>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Looking for premium <strong>{service.name}</strong> in Mumbai? Our exclusive selection of {service.name.toLowerCase()} are verified, professional, and available 24/7 for both incall and outcall services across Mumbai and India.
-          </p>
-          <p className="text-gray-600 leading-relaxed mb-8">
-            We pride ourselves on providing only the finest {service.name.toLowerCase()} who are not just beautiful but also sophisticated, intelligent, and discreet. Whether you need a companion for a social event, business meeting, or private encounter, our {service.name.toLowerCase()} will exceed your expectations.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/book-now" className="btn-primary text-center">
-              Book {service.shortName} Now
-            </Link>
-            <a href="tel:+919038976363" className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary text-primary font-semibold rounded hover:bg-primary hover:text-white transition-colors">
-              <Phone size={18} />
-              +91-9038976363
-            </a>
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                {service.name} in Mumbai
+              </h1>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Looking for premium <strong>{service.name}</strong> in Mumbai? Our exclusive selection of {service.name.toLowerCase()} are verified, professional, and available 24/7 for both incall and outcall services across Mumbai and India.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-8">
+                We pride ourselves on providing only the finest {service.name.toLowerCase()} who are not just beautiful but also sophisticated, intelligent, and discreet. Whether you need a companion for a social event, business meeting, or private encounter, our {service.name.toLowerCase()} will exceed your expectations.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/book-now" className="btn-primary text-center">
+                  Book {service.shortName} Now
+                </Link>
+                <a href="tel:+919038976363" className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary text-primary font-semibold rounded hover:bg-primary hover:text-white transition-colors">
+                  <Phone size={18} />
+                  +91-9038976363
+                </a>
+              </div>
+            </div>
+            <div className="relative h-72 lg:h-96 rounded-xl overflow-hidden shadow-xl">
+              <Image
+                src={service.image}
+                alt={service.name}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
