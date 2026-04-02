@@ -7,11 +7,12 @@ import { CheckCircle, Users, MapPin, Star } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'About Us | Know Everything About Saumya Basu Escorts In Mumbai',
   description: 'We Offer Best Escorts Services In Mumbai & Call Girls Service In Mumbai to Take Care of your Day Or Night Like No Other',
+  alternates: { canonical: 'https://meetinmumbai.com/about-us' },
   openGraph: {
     title: 'About Us - Saumya Basu Escorts In Mumbai',
     description: 'We Offer Best Escorts Services In Mumbai & Call Girls Service In Mumbai to Take Care of your Day Or Night Like No Other',
     url: 'https://meetinmumbai.com/about-us',
-    images: [{ url: '/images/escorts-banner.webp' }],
+    images: [{ url: '/images/escorts-banner.webp', width: 1200, height: 630 }],
   },
 }
 

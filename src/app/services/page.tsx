@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: 'Our Escort Services — Meet in Mumbai',
     description: 'Browse all 24 premium escort categories. Verified, discreet, available 24/7 across India.',
     url: 'https://meetinmumbai.com/services',
+    images: [{ url: '/images/escorts-banner.webp', width: 1200, height: 630 }],
   },
   alternates: { canonical: 'https://meetinmumbai.com/services' },
 }

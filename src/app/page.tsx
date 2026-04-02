@@ -8,6 +8,7 @@ import { services } from '@/data/services'
 export const metadata: Metadata = {
   title: 'Escorts In Mumbai | 100% Genuine Call Girls In Mumbai',
   description: 'Mumbai Escorts Service at 8k to 50K with Cash by Payment Mumbai Call Girls 24/7 Available. Incall & outcall Girl will reach your location in 25 minutes.',
+  alternates: { canonical: 'https://meetinmumbai.com' },
   openGraph: {
     title: 'Escorts In Mumbai | 100% Genuine Call Girls In Mumbai',
     description: 'Mumbai Escorts Service at 8k to 50K with Cash by Payment Mumbai Call Girls 24/7 Available.',

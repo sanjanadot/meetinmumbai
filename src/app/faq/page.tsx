@@ -5,9 +5,12 @@ import PageHeader from '@/components/PageHeader'
 export const metadata: Metadata = {
   title: 'FAQs | Frequently Asked Questions About Escort Services Mumbai',
   description: 'Find answers to frequently asked questions about escort services in Mumbai. Learn about booking, pricing, safety, and more.',
+  alternates: { canonical: 'https://meetinmumbai.com/faq' },
   openGraph: {
     title: 'FAQs - Meet in Mumbai Escort Services',
+    description: 'Find answers to frequently asked questions about escort services in Mumbai.',
     url: 'https://meetinmumbai.com/faq',
+    images: [{ url: '/images/escorts-banner.webp', width: 1200, height: 630 }],
   },
 }
 

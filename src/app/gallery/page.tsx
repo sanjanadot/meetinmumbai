@@ -6,11 +6,12 @@ import PageHeader from '@/components/PageHeader'
 export const metadata: Metadata = {
   title: 'Gallery | Premium Escorts Photo Gallery Mumbai',
   description: 'Browse our gallery of premium escorts in Mumbai. View photos of our verified call girls and select the perfect companion for your needs.',
+  alternates: { canonical: 'https://meetinmumbai.com/gallery' },
   openGraph: {
     title: 'Escorts Gallery - Meet in Mumbai',
     description: 'Browse our gallery of premium escorts in Mumbai.',
     url: 'https://meetinmumbai.com/gallery',
-    images: [{ url: '/images/escorts-banner.webp' }],
+    images: [{ url: '/images/escorts-banner.webp', width: 1200, height: 630 }],
   },
 }
 

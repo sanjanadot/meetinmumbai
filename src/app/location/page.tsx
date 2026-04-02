@@ -7,10 +7,12 @@ import { MapPin } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Service Locations | Escort Services Across India',
   description: 'Find premium escort services at your location. We cover Mumbai, Pune, Delhi, Bangalore, Jaipur, Lucknow, and 100+ locations across India.',
+  alternates: { canonical: 'https://meetinmumbai.com/location' },
   openGraph: {
     title: 'Service Locations - Meet in Mumbai',
     description: 'Escort services available across 100+ locations in India.',
     url: 'https://meetinmumbai.com/location',
+    images: [{ url: '/images/escorts-banner.webp', width: 1200, height: 630 }],
   },
 }
 

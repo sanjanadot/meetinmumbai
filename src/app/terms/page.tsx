@@ -4,10 +4,13 @@ import PageHeader from '@/components/PageHeader'
 export const metadata: Metadata = {
   title: 'Terms & Conditions | Meet in Mumbai Escorts',
   description: 'Read the terms and conditions for using Meet in Mumbai escort services. Understand our booking policy, cancellation policy, and user responsibilities.',
+  alternates: { canonical: 'https://meetinmumbai.com/terms' },
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Terms & Conditions - Meet in Mumbai',
+    description: 'Terms and conditions for using Meet in Mumbai escort services.',
     url: 'https://meetinmumbai.com/terms',
+    images: [{ url: '/images/escorts-banner.webp', width: 1200, height: 630 }],
   },
 }
 

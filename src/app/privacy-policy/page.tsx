@@ -4,10 +4,13 @@ import PageHeader from '@/components/PageHeader'
 export const metadata: Metadata = {
   title: 'Privacy Policy | Meet in Mumbai Escorts',
   description: 'Read the privacy policy of Meet in Mumbai. We are committed to protecting your personal data and ensuring complete confidentiality.',
+  alternates: { canonical: 'https://meetinmumbai.com/privacy-policy' },
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Privacy Policy - Meet in Mumbai',
+    description: 'Privacy policy of Meet in Mumbai escorts. Your data is protected and confidential.',
     url: 'https://meetinmumbai.com/privacy-policy',
+    images: [{ url: '/images/escorts-banner.webp', width: 1200, height: 630 }],
   },
 }
 

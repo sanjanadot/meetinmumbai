@@ -20,13 +20,16 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const city = getCityBySlug(params.slug)
   if (!city) return {}
+  const url = `https://meetinmumbai.com/city/${params.slug}`
   return {
     title: city.seoTitle,
     description: city.seoDescription,
+    alternates: { canonical: url },
     openGraph: {
       title: city.seoTitle,
       description: city.seoDescription,
-      images: [{ url: city.heroImage, width: 1200, height: 630 }],
+      url,
+      images: [{ url: `https://meetinmumbai.com${city.heroImage}`, width: 1200, height: 630 }],
     },
   }
 }
