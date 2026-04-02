@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Meet in Mumbai',
     locale: 'en_IN',
+    images: [{ url: '/images/escorts-banner.webp', width: 1200, height: 630, alt: 'Meet in Mumbai – Premium Escort Services' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -107,7 +108,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     postalCode: '400068',
                     addressCountry: 'IN',
                   },
-                  sameAs: [],
+                  sameAs: [
+                    // Add your social media profile URLs here, e.g.:
+                    // 'https://www.facebook.com/meetinmumbai',
+                    // 'https://www.instagram.com/meetinmumbai',
+                    // 'https://twitter.com/meetinmumbai',
+                  ],
                 },
                 {
                   '@type': 'WebSite',

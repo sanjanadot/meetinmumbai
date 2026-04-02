@@ -31,6 +31,11 @@ export async function generateMetadata({
       url,
       images: [{ url: `https://meetinmumbai.com${city.heroImage}`, width: 1200, height: 630 }],
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: city.seoTitle,
+      description: city.seoDescription,
+    },
   }
 }
 

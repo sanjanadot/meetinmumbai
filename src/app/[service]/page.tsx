@@ -32,6 +32,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url,
       images: [{ url: 'https://meetinmumbai.com/images/escorts-banner.webp' }],
     },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
   }
 }
 

@@ -1,5 +1,11 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Home, Phone } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: '404 – Page Not Found | Meet in Mumbai',
+  robots: { index: false, follow: false },
+}
 
 export default function NotFound() {
   return (
