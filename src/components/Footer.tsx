@@ -1,5 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import { cityFooterData } from '@/data/footerCityData'
 
 const SocialIcons = {
   Facebook: () => (
@@ -90,6 +94,19 @@ const additionalServices = [
 
 export default function Footer() {
   const year = new Date().getFullYear()
+  const pathname = usePathname()
+
+  // Detect city page: /city/[slug]
+  const cityMatch = pathname?.match(/^\/city\/([^/]+)$/)
+  const citySlug = cityMatch?.[1] ?? null
+  const cityData = citySlug ? cityFooterData[citySlug] : null
+
+  const col1 = cityData?.col1 ?? footerServices
+  const col2 = cityData?.col2 ?? moreServices
+  const col3 = cityData?.col3 ?? additionalServices
+  const col1Title = cityData ? `${cityData.cityName} Escorts` : 'Our Services'
+  const col2Title = cityData ? `More In ${cityData.cityName}` : 'More Services'
+  const col3Title = cityData ? `Also In ${cityData.cityName}` : 'Also Available In'
 
   return (
     <footer className="bg-gray-950 text-gray-400">
@@ -154,9 +171,9 @@ export default function Footer() {
 
           {/* Services Col 1 */}
           <div>
-            <h4 className="text-yellow-400 font-bold text-xs uppercase tracking-[3px] mb-5">Our Services</h4>
+            <h4 className="text-yellow-400 font-bold text-xs uppercase tracking-[3px] mb-5">{col1Title}</h4>
             <ul className="space-y-1.5">
-              {footerServices.map((s) => (
+              {col1.map((s) => (
                 <li key={s.href}>
                   <Link href={s.href} className="flex items-center gap-1.5 text-sm hover:text-yellow-400 hover:translate-x-0.5 transition-all duration-200">
                     <ArrowRight size={11} className="text-primary shrink-0" />
@@ -169,9 +186,9 @@ export default function Footer() {
 
           {/* Services Col 2 */}
           <div>
-            <h4 className="text-yellow-400 font-bold text-xs uppercase tracking-[3px] mb-5">More Services</h4>
+            <h4 className="text-yellow-400 font-bold text-xs uppercase tracking-[3px] mb-5">{col2Title}</h4>
             <ul className="space-y-1.5">
-              {moreServices.map((s) => (
+              {col2.map((s) => (
                 <li key={s.href}>
                   <Link href={s.href} className="flex items-center gap-1.5 text-sm hover:text-yellow-400 hover:translate-x-0.5 transition-all duration-200">
                     <ArrowRight size={11} className="text-primary shrink-0" />
@@ -184,9 +201,9 @@ export default function Footer() {
 
           {/* Services Col 3 */}
           <div>
-            <h4 className="text-yellow-400 font-bold text-xs uppercase tracking-[3px] mb-5">Also Available In</h4>
+            <h4 className="text-yellow-400 font-bold text-xs uppercase tracking-[3px] mb-5">{col3Title}</h4>
             <ul className="space-y-1.5">
-              {additionalServices.map((s) => (
+              {col3.map((s) => (
                 <li key={s.href}>
                   <Link href={s.href} className="flex items-center gap-1.5 text-sm hover:text-yellow-400 hover:translate-x-0.5 transition-all duration-200">
                     <ArrowRight size={11} className="text-primary shrink-0" />
