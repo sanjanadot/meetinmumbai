@@ -3,7 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import PageHeader from '@/components/PageHeader'
 import { services } from '@/data/services'
-import { ArrowRight } from 'lucide-react'
+import { locations } from '@/data/locations'
+import { ArrowRight, MapPin } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Our Escort Services | Saumya Basu Escorts Mumbai',
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
 }
 
 export default function ServicesPage() {
+  const mumbaiLocations = locations.filter((l) => l.city === 'Mumbai' || l.state === 'Maharashtra' && (l.city === 'Thane' || l.city === 'Navi Mumbai'))
+
   return (
     <>
       <PageHeader
@@ -70,6 +73,42 @@ export default function ServicesPage() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Locations */}
+      <section className="py-16 bg-gray-950 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-transparent" />
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Header */}
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="label-eyebrow">Our Locations</span>
+            <h2 className="text-3xl md:text-4xl font-bold font-serif text-white mt-3 mb-3">Escorts Available In Mumbai</h2>
+            <div className="section-divider" />
+            <p className="text-gray-400">
+              Premium escort services across all Mumbai localities. Select your area to book instantly.
+            </p>
+          </div>
+          {/* Location grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-3">
+            {mumbaiLocations.map((loc) => (
+              <Link
+                key={loc.slug}
+                href={`/escorts-in/${loc.slug}`}
+                className="group flex items-center gap-2 bg-white/5 border border-white/10 hover:border-primary/40 hover:bg-white/10 rounded-xl px-3 py-2.5 transition-all duration-200"
+              >
+                <MapPin size={13} className="text-primary shrink-0" />
+                <span className="text-gray-300 group-hover:text-yellow-400 text-sm font-medium transition-colors truncate">
+                  {loc.name}
+                </span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/location" className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-medium text-sm transition-colors">
+              View all locations across India <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </section>
