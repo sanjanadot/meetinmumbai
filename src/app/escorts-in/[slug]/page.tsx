@@ -55,6 +55,10 @@ export default function LocationPage({ params }: Props) {
     .filter((l) => l.state === location.state && l.slug !== params.slug)
     .slice(0, 12)
 
+  const citySubLocations = locations.filter(
+    (l) => l.city === location.city && l.image && l.slug !== params.slug
+  )
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -296,6 +300,52 @@ export default function LocationPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* ── CITY SUB-LOCATIONS ── */}
+      {citySubLocations.length > 0 && (
+        <section className="py-16 bg-gray-950 relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-transparent" />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <span className="label-eyebrow">Nearby Areas</span>
+              <h2 className="text-3xl md:text-4xl font-bold font-serif text-white mt-3 mb-3">
+                Escorts Available Across {location.city}
+              </h2>
+              <div className="section-divider" />
+              <p className="text-gray-400">
+                Verified escorts serving all major areas and neighbourhoods in {location.city}.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-5">
+              {citySubLocations.map((loc) => (
+                <Link
+                  key={loc.slug}
+                  href={`/escorts-in/${loc.slug}`}
+                  className="group rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover bg-white/5"
+                >
+                  <div className="overflow-hidden">
+                    <Image
+                      src={loc.image!}
+                      alt={`Escorts in ${loc.name}`}
+                      width={400}
+                      height={560}
+                      style={{ width: '100%', height: 'auto' }}
+                      sizes="(max-width: 640px) 50vw, 25vw"
+                      className="group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-3 sm:p-4 flex items-center gap-2">
+                    <MapPin size={13} className="text-primary shrink-0" />
+                    <h3 className="font-bold text-white font-serif text-sm sm:text-base leading-tight group-hover:text-yellow-400 transition-colors">
+                      {loc.name}
+                    </h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── OUR LOCATIONS ── */}
       <section className="py-16 bg-gray-900 relative">
