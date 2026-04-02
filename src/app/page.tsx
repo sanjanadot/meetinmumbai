@@ -357,7 +357,7 @@ export default function HomePage() {
             ] as { name: string; slug: string; image: string }[]).map((city) => (
               <Link
                 key={city.slug}
-                href={`/escorts-in/${city.slug}`}
+                href={`/city/${city.slug.replace('escorts-in-', '')}`}
                 className="group rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover bg-white/5"
               >
                 <div className="overflow-hidden">

@@ -1159,3 +1159,12 @@ export function getMumbaiLocations(): Location[] {
 export function getAllSlugs(): string[] {
   return locations.map((l) => l.slug)
 }
+
+export function getLocationsByCity(city: string): Location[] {
+  return locations.filter((l) => l.city === city)
+}
+
+export function getLocationsByCityFolder(folder: string): Location[] {
+  // Match by image path folder prefix
+  return locations.filter((l) => l.image?.startsWith(`/images/${folder}/`))
+}
