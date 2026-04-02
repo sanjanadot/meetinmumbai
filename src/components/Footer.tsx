@@ -92,13 +92,16 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-gray-950 text-gray-400">
+      {/* Gradient top accent */}
+      <div className="h-[2px] bg-gradient-to-r from-primary via-yellow-500 to-primary" />
+
       {/* WhatsApp Widget */}
       <a
         href="https://wa.me/919038976363"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 left-6 z-50 bg-green-500 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors"
+        className="fixed bottom-6 left-6 z-50 bg-green-500 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:bg-green-600 hover:shadow-[0_0_25px_rgba(34,197,94,0.55)] transition-all duration-300"
         aria-label="WhatsApp us"
       >
         <svg viewBox="0 0 24 24" className="w-7 h-7 fill-current">
@@ -109,7 +112,7 @@ export default function Footer() {
       {/* Call Widget */}
       <a
         href="tel:+919038976363"
-        className="fixed bottom-6 right-6 z-50 bg-primary text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:bg-primary-dark transition-colors"
+        className="fixed bottom-6 right-6 z-50 bg-primary text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:bg-primary-dark hover:shadow-[0_0_25px_rgba(200,16,46,0.55)] transition-all duration-300"
         aria-label="Call us"
       >
         <Phone size={24} />
@@ -118,21 +121,21 @@ export default function Footer() {
       <div className="container mx-auto px-4 pt-12 pb-8">
         {/* Social Row */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-          <p className="text-sm">Follow Us On:</p>
+          <p className="text-sm text-gray-500 uppercase tracking-widest">Follow Us</p>
           <div className="flex items-center gap-3">
-            <a href="#" aria-label="Facebook" className="hover:text-primary transition-colors"><SocialIcons.Facebook /></a>
-            <a href="#" aria-label="Twitter" className="hover:text-primary transition-colors"><SocialIcons.Twitter /></a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-primary transition-colors"><SocialIcons.Linkedin /></a>
-            <a href="#" aria-label="Instagram" className="hover:text-primary transition-colors"><SocialIcons.Instagram /></a>
-            <a href="#" aria-label="Pinterest" className="hover:text-primary transition-colors"><SocialIcons.Pinterest /></a>
+            <a href="#" aria-label="Facebook" className="hover:text-yellow-400 transition-colors duration-200"><SocialIcons.Facebook /></a>
+            <a href="#" aria-label="Twitter" className="hover:text-yellow-400 transition-colors duration-200"><SocialIcons.Twitter /></a>
+            <a href="#" aria-label="LinkedIn" className="hover:text-yellow-400 transition-colors duration-200"><SocialIcons.Linkedin /></a>
+            <a href="#" aria-label="Instagram" className="hover:text-yellow-400 transition-colors duration-200"><SocialIcons.Instagram /></a>
+            <a href="#" aria-label="Pinterest" className="hover:text-yellow-400 transition-colors duration-200"><SocialIcons.Pinterest /></a>
           </div>
         </div>
-        <hr className="border-gray-700 mb-8" />
+        <hr className="border-white/10 mb-8" />
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Contact Info */}
           <div>
-            <h4 className="text-white font-semibold text-base mb-4">Head Office</h4>
+            <h4 className="text-yellow-400 font-bold text-xs uppercase tracking-[3px] mb-5">Head Office</h4>
             <address className="not-italic space-y-2 text-sm">
               <p className="flex items-start gap-2">
                 <MapPin size={16} className="mt-0.5 shrink-0 text-primary" />
@@ -140,23 +143,23 @@ export default function Footer() {
               </p>
               <p className="flex items-center gap-2">
                 <Phone size={16} className="text-primary" />
-                <a href="tel:+919038976363" className="hover:text-white transition-colors">+91-9038976363</a>
+                <a href="tel:+919038976363" className="hover:text-yellow-400 transition-colors">+91-9038976363</a>
               </p>
               <p className="flex items-center gap-2">
                 <Mail size={16} className="text-primary" />
-                <a href="mailto:sanjanadotsingh@gmail.com" className="hover:text-white transition-colors text-xs">sanjanadotsingh@gmail.com</a>
+                <a href="mailto:sanjanadotsingh@gmail.com" className="hover:text-yellow-400 transition-colors text-xs">sanjanadotsingh@gmail.com</a>
               </p>
             </address>
           </div>
 
           {/* Services Col 1 */}
           <div>
-            <h4 className="text-white font-semibold text-base mb-4">Our Services</h4>
-            <ul className="space-y-1">
+            <h4 className="text-yellow-400 font-bold text-xs uppercase tracking-[3px] mb-5">Our Services</h4>
+            <ul className="space-y-1.5">
               {footerServices.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="flex items-center gap-1 text-sm hover:text-primary transition-colors">
-                    <ArrowRight size={12} className="text-primary shrink-0" />
+                  <Link href={s.href} className="flex items-center gap-1.5 text-sm hover:text-yellow-400 hover:translate-x-0.5 transition-all duration-200">
+                    <ArrowRight size={11} className="text-primary shrink-0" />
                     {s.label}
                   </Link>
                 </li>
@@ -166,12 +169,12 @@ export default function Footer() {
 
           {/* Services Col 2 */}
           <div>
-            <h4 className="text-white font-semibold text-base mb-4">More Services</h4>
-            <ul className="space-y-1">
+            <h4 className="text-yellow-400 font-bold text-xs uppercase tracking-[3px] mb-5">More Services</h4>
+            <ul className="space-y-1.5">
               {moreServices.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="flex items-center gap-1 text-sm hover:text-primary transition-colors">
-                    <ArrowRight size={12} className="text-primary shrink-0" />
+                  <Link href={s.href} className="flex items-center gap-1.5 text-sm hover:text-yellow-400 hover:translate-x-0.5 transition-all duration-200">
+                    <ArrowRight size={11} className="text-primary shrink-0" />
                     {s.label}
                   </Link>
                 </li>
@@ -181,12 +184,12 @@ export default function Footer() {
 
           {/* Services Col 3 */}
           <div>
-            <h4 className="text-white font-semibold text-base mb-4">Also Available In</h4>
-            <ul className="space-y-1">
+            <h4 className="text-yellow-400 font-bold text-xs uppercase tracking-[3px] mb-5">Also Available In</h4>
+            <ul className="space-y-1.5">
               {additionalServices.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="flex items-center gap-1 text-sm hover:text-primary transition-colors">
-                    <ArrowRight size={12} className="text-primary shrink-0" />
+                  <Link href={s.href} className="flex items-center gap-1.5 text-sm hover:text-yellow-400 hover:translate-x-0.5 transition-all duration-200">
+                    <ArrowRight size={11} className="text-primary shrink-0" />
                     {s.label}
                   </Link>
                 </li>
@@ -197,14 +200,16 @@ export default function Footer() {
       </div>
 
       {/* Sub Footer */}
-      <div className="bg-gray-950 py-4">
-        <div className="container mx-auto px-4 flex flex-wrap items-center justify-between gap-2 text-sm">
+      <div className="border-t border-white/10 py-5">
+        <div className="container mx-auto px-4 flex flex-wrap items-center justify-between gap-2 text-sm text-gray-500">
           <p>Copyright &copy; {year} | Meet in Mumbai. All rights reserved!</p>
-          <ul className="flex items-center gap-4">
-            <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
-            <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
-            <li><Link href="/faq" className="hover:text-primary transition-colors">FAQs</Link></li>
-            <li><Link href="/services" className="hover:text-primary transition-colors">Services</Link></li>
+          <ul className="flex flex-wrap items-center gap-4">
+            <li><Link href="/" className="hover:text-yellow-400 transition-colors">Home</Link></li>
+            <li><Link href="/contact" className="hover:text-yellow-400 transition-colors">Contact</Link></li>
+            <li><Link href="/faq" className="hover:text-yellow-400 transition-colors">FAQs</Link></li>
+            <li><Link href="/services" className="hover:text-yellow-400 transition-colors">Services</Link></li>
+            <li><Link href="/privacy-policy" className="hover:text-yellow-400 transition-colors">Privacy Policy</Link></li>
+            <li><Link href="/terms" className="hover:text-yellow-400 transition-colors">Terms &amp; Conditions</Link></li>
           </ul>
         </div>
       </div>

@@ -114,6 +114,21 @@ export default function FAQPage() {
         }}
       />
 
+      {/* BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://meetinmumbai.com' },
+              { '@type': 'ListItem', position: 2, name: 'FAQs', item: 'https://meetinmumbai.com/faq' },
+            ],
+          }),
+        }}
+      />
+
       <section className="py-12 bg-primary text-white text-center">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold mb-4">Still Have Questions?</h2>

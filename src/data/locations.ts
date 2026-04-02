@@ -1152,6 +1152,10 @@ export function getFeaturedLocations(): Location[] {
   return locations.filter((l) => l.featured)
 }
 
+export function getMumbaiLocations(): Location[] {
+  return locations.filter((l) => l.city === 'Mumbai')
+}
+
 export function getAllSlugs(): string[] {
   return locations.map((l) => l.slug)
 }

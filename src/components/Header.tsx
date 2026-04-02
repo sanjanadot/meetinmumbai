@@ -67,30 +67,30 @@ export default function Header() {
   return (
     <div>
       {/* Top Bar */}
-      <div className="bg-gray-900 text-white text-sm py-2">
+      <div className="bg-gray-950 border-b border-white/5 text-white text-sm py-2.5">
         <div className="container mx-auto px-4 flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-4">
-            <a href="tel:+919038976363" className="flex items-center gap-1 hover:text-primary transition-colors">
-              <Phone size={14} />
+          <div className="flex items-center gap-5">
+            <a href="tel:+919038976363" className="flex items-center gap-1.5 text-yellow-400 hover:text-yellow-300 transition-colors font-medium">
+              <Phone size={13} />
               <span>+91-9038976363</span>
             </a>
-            <a href="mailto:sanjanadotsingh@gmail.com" className="flex items-center gap-1 hover:text-primary transition-colors hidden sm:flex">
-              <Mail size={14} />
+            <a href="mailto:sanjanadotsingh@gmail.com" className="flex items-center gap-1.5 text-gray-400 hover:text-gray-200 transition-colors hidden sm:flex">
+              <Mail size={13} />
               <span>sanjanadotsingh@gmail.com</span>
             </a>
           </div>
-          <div className="flex items-center gap-2">
-            <a href="#" aria-label="Facebook" className="hover:text-primary transition-colors"><SocialIcons.Facebook /></a>
-            <a href="#" aria-label="Twitter" className="hover:text-primary transition-colors"><SocialIcons.Twitter /></a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-primary transition-colors"><SocialIcons.Linkedin /></a>
-            <a href="#" aria-label="Instagram" className="hover:text-primary transition-colors"><SocialIcons.Instagram /></a>
-            <a href="#" aria-label="Pinterest" className="hover:text-primary transition-colors"><SocialIcons.Pinterest /></a>
+          <div className="flex items-center gap-3">
+            <a href="#" aria-label="Facebook" className="text-gray-500 hover:text-yellow-400 transition-colors"><SocialIcons.Facebook /></a>
+            <a href="#" aria-label="Twitter" className="text-gray-500 hover:text-yellow-400 transition-colors"><SocialIcons.Twitter /></a>
+            <a href="#" aria-label="LinkedIn" className="text-gray-500 hover:text-yellow-400 transition-colors"><SocialIcons.Linkedin /></a>
+            <a href="#" aria-label="Instagram" className="text-gray-500 hover:text-yellow-400 transition-colors"><SocialIcons.Instagram /></a>
+            <a href="#" aria-label="Pinterest" className="text-gray-500 hover:text-yellow-400 transition-colors"><SocialIcons.Pinterest /></a>
           </div>
         </div>
       </div>
 
       {/* Main Header */}
-      <header className="bg-white shadow-md sticky top-0 z-50">
+      <header className="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-3">
             {/* Logo */}
@@ -106,21 +106,24 @@ export default function Header() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-1">
-              <Link href="/" className="px-4 py-2 font-medium text-gray-700 hover:text-primary transition-colors">
-                Home
-              </Link>
+            <nav className="hidden lg:flex items-center gap-0.5">
+              {[['/', 'Home'], ['/about-us', 'About'], ['/gallery', 'Gallery'], ['/location', 'Location'], ['/contact', 'Contact']].map(([href, label]) => (
+                <Link key={href} href={href} className="relative px-4 py-2 font-medium text-gray-600 hover:text-primary transition-colors group">
+                  {label}
+                  <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-gradient-to-r from-primary to-rose-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-full" />
+                </Link>
+              ))}
 
               {/* Services Dropdown */}
               <div className="relative group">
-                <Link href="/services" className="px-4 py-2 font-medium text-gray-700 hover:text-primary transition-colors flex items-center gap-1">
-                  Services <ChevronDown size={14} />
-                </Link>
-                <div className="absolute top-full left-0 hidden group-hover:flex bg-white shadow-xl border border-gray-100 rounded-lg p-4 w-96 gap-4 z-50">
+                <button className="px-4 py-2 font-medium text-gray-600 hover:text-primary transition-colors flex items-center gap-1">
+                  Services <ChevronDown size={13} className="group-hover:rotate-180 transition-transform duration-200" />
+                </button>
+                <div className="absolute top-full left-0 hidden group-hover:flex bg-white shadow-2xl border border-gray-100 rounded-2xl p-5 w-[420px] gap-5 z-50">
                   <ul className="flex-1 space-y-1">
                     {serviceLinks.slice(0, 12).map((s) => (
                       <li key={s.href}>
-                        <Link href={s.href} className="text-sm text-gray-600 hover:text-primary transition-colors block py-0.5">
+                        <Link href={s.href} className="text-sm text-gray-500 hover:text-primary hover:pl-1 transition-all block py-0.5">
                           {s.label}
                         </Link>
                       </li>
@@ -129,7 +132,7 @@ export default function Header() {
                   <ul className="flex-1 space-y-1">
                     {serviceLinks.slice(12).map((s) => (
                       <li key={s.href}>
-                        <Link href={s.href} className="text-sm text-gray-600 hover:text-primary transition-colors block py-0.5">
+                        <Link href={s.href} className="text-sm text-gray-500 hover:text-primary hover:pl-1 transition-all block py-0.5">
                           {s.label}
                         </Link>
                       </li>
@@ -138,21 +141,9 @@ export default function Header() {
                 </div>
               </div>
 
-              <Link href="/about-us" className="px-4 py-2 font-medium text-gray-700 hover:text-primary transition-colors">
-                About
-              </Link>
-              <Link href="/gallery" className="px-4 py-2 font-medium text-gray-700 hover:text-primary transition-colors">
-                Gallery
-              </Link>
-              <Link href="/location" className="px-4 py-2 font-medium text-gray-700 hover:text-primary transition-colors">
-                Location
-              </Link>
-              <Link href="/contact" className="px-4 py-2 font-medium text-gray-700 hover:text-primary transition-colors">
-                Contact
-              </Link>
               <Link
                 href="/book-now"
-                className="ml-2 px-5 py-2 bg-primary text-white font-semibold rounded hover:bg-primary-dark transition-colors"
+                className="ml-3 px-6 py-2.5 bg-gradient-to-r from-primary to-rose-700 text-white font-semibold rounded-xl hover:shadow-glow-red hover:-translate-y-0.5 transition-all duration-300 text-sm"
               >
                 Book Now
               </Link>
@@ -199,7 +190,7 @@ export default function Header() {
               <Link href="/contact" className="block py-2 font-medium text-gray-700 hover:text-primary" onClick={() => setMobileOpen(false)}>Contact</Link>
               <Link
                 href="/book-now"
-                className="block mt-2 px-5 py-2 bg-primary text-white font-semibold rounded hover:bg-primary-dark text-center"
+                className="block mt-3 px-5 py-3 bg-gradient-to-r from-primary to-rose-700 text-white font-semibold rounded-xl hover:shadow-glow-red transition-all text-center"
                 onClick={() => setMobileOpen(false)}
               >
                 Book Now

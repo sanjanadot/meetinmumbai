@@ -1,12 +1,8 @@
 'use client'
 
-import type { Metadata } from 'next'
 import { useState } from 'react'
 import PageHeader from '@/components/PageHeader'
 import { MapPin, Phone, Mail, Send } from 'lucide-react'
-
-// Note: metadata can't be exported from a 'use client' component
-// Move metadata to a separate layout or use a server component wrapper
 
 function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')

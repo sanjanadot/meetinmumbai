@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=swap');
 
 @layer base {
   html {
@@ -12,6 +12,12 @@
   body {
     @apply font-sans text-gray-800 bg-white;
   }
+
+  /* Luxury scrollbar */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #0a0a0a; }
+  ::-webkit-scrollbar-thumb { background: #c8102e; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #e8334e; }
 
   h1, h2, h3, h4 {
     @apply font-serif;
@@ -24,41 +30,72 @@
   }
 
   .btn-primary {
-    @apply inline-block px-6 py-3 bg-primary text-white font-semibold rounded hover:bg-primary-dark transition-colors;
+    @apply inline-block px-7 py-3.5 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-xl hover:shadow-glow-red hover:-translate-y-0.5 transition-all duration-300;
+  }
+
+  .btn-outline {
+    @apply inline-block px-7 py-3.5 border-2 border-primary text-primary font-semibold rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-center;
   }
 
   .section-title {
-    @apply text-3xl font-bold text-gray-900 mb-4;
+    @apply text-3xl font-bold text-gray-900 mb-4 font-serif;
   }
 
   .section-subtitle {
-    @apply text-gray-600 text-lg mb-8;
+    @apply text-gray-500 text-lg mb-8;
   }
 
   .form-input {
-    @apply w-full border border-gray-300 rounded px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition;
+    @apply w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition bg-white;
   }
 
   .service-card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300;
+    @apply bg-white rounded-xl shadow-md overflow-hidden hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-rose-400 to-yellow-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-gold {
+    @apply bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent;
+  }
+
+  /* Glass morphism */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-md border border-white/10;
+  }
+
+  /* Divider accent */
+  .section-divider {
+    @apply w-20 h-0.5 bg-gradient-to-r from-primary to-gold rounded-full mx-auto my-4;
+  }
+
+  /* Section label (eyebrow text) */
+  .label-eyebrow {
+    @apply text-gold text-sm font-semibold uppercase tracking-[4px] block mb-3;
   }
 }
 
-/* Hero Slider Styles */
-.hero-slide {
-  @apply relative min-h-[500px] md:min-h-[600px] flex items-center;
+/* Hero entrance animations */
+.hero-enter { animation: heroEnter 0.9s ease-out forwards; opacity: 0; }
+.hero-enter-delay-1 { animation: heroEnter 0.9s ease-out 0.2s forwards; opacity: 0; }
+.hero-enter-delay-2 { animation: heroEnter 0.9s ease-out 0.4s forwards; opacity: 0; }
+.hero-enter-delay-3 { animation: heroEnter 0.9s ease-out 0.6s forwards; opacity: 0; }
+
+@keyframes heroEnter {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.hero-overlay {
-  @apply absolute inset-0 bg-black bg-opacity-50;
-}
-
-/* Animate on scroll helper */
-.fade-in {
-  animation: fadeIn 0.6s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Gradient border card (animated) */
+@keyframes gradientRotate {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

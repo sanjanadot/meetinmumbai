@@ -104,6 +104,21 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://meetinmumbai.com' },
+              { '@type': 'ListItem', position: 2, name: 'About Us', item: 'https://meetinmumbai.com/about-us' },
+            ],
+          }),
+        }}
+      />
+
       {/* Mission */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -128,6 +143,20 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      {/* BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://meetinmumbai.com' },
+              { '@type': 'ListItem', position: 2, name: 'About Us', item: 'https://meetinmumbai.com/about-us' },
+            ],
+          }),
+        }}
+      />
     </>
   )
 }
