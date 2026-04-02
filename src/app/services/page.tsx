@@ -26,23 +26,20 @@ export default function ServicesPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Services' }]}
       />
 
-      {/* Intro */}
+      {/* Services Grid */}
       <section className="py-16 bg-gray-950 relative">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-transparent" />
-        <div className="container mx-auto px-4 text-center max-w-3xl relative z-10">
-          <span className="label-eyebrow">What We Offer</span>
-          <h2 className="text-4xl md:text-5xl font-bold font-serif text-white mb-3">Premium Escort Services in Mumbai</h2>
-          <div className="section-divider" />
-          <p className="text-gray-400 text-lg leading-relaxed">
-            We offer a diverse selection of premium escort services to cater to every taste and preference. All our escorts are verified, professional, and dedicated to providing an unforgettable experience.
-          </p>
-        </div>
-      </section>
-
-      {/* Services Grid */}
-      <section className="py-12 bg-gray-900">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5">
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Header */}
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="label-eyebrow">Explore</span>
+            <h2 className="text-3xl md:text-4xl font-bold font-serif text-white mt-3 mb-3">Our Escort Services</h2>
+            <div className="section-divider" />
+            <p className="text-gray-400">
+              Explore our wide range of premium escort services tailored to your preferences.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
             {services.map((service) => (
               <Link
                 key={service.slug}
@@ -54,7 +51,7 @@ export default function ServicesPage() {
                     src={service.image}
                     alt={service.name}
                     fill
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                     className="object-cover object-top group-hover:scale-110 transition-transform duration-500"
                   />
                   {/* Permanent subtle gradient for legibility */}
