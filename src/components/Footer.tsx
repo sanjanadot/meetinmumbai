@@ -3,8 +3,8 @@
 import Link from 'next/link'
 import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react'
 import { usePathname } from 'next/navigation'
-import { getLocationsByCityFolder } from '@/data/locations'
-import { getCityBySlug } from '@/data/cities'
+import { getLocationsByCityFolder, getLocationBySlug } from '@/data/locations'
+import { getCityBySlug, cities } from '@/data/cities'
 
 const SocialIcons = {
   Facebook: () => (
@@ -102,6 +102,18 @@ export default function Footer() {
   const citySlug = cityMatch?.[1] ?? null
   const cityInfo = citySlug ? getCityBySlug(citySlug) : null
 
+  // Detect sublocation page: /escorts-in/[slug]
+  const sublocMatch = pathname?.match(/^\/escorts-in\/([^/]+)$/)
+  const sublocSlug = sublocMatch?.[1] ?? null
+  const sublocCityInfo = sublocSlug
+    ? (() => {
+        const loc = getLocationBySlug(sublocSlug)
+        return loc ? cities.find((c) => c.cityKey === loc.city) ?? null : null
+      })()
+    : null
+
+  const activeCityInfo = cityInfo ?? sublocCityInfo
+
   // Build city-specific columns from ALL locations with images
   let col1 = footerServices
   let col2 = moreServices
@@ -110,17 +122,17 @@ export default function Footer() {
   let col2Title = 'More Services'
   let col3Title = 'Also Available In'
 
-  if (cityInfo) {
-    const allCityLocs = getLocationsByCityFolder(cityInfo.folder)
+  if (activeCityInfo) {
+    const allCityLocs = getLocationsByCityFolder(activeCityInfo.folder)
       .filter((l) => l.image)
       .map((l) => ({ href: `/escorts-in/${l.slug}`, label: `Escorts In ${l.name}` }))
     const third = Math.ceil(allCityLocs.length / 3)
     col1 = allCityLocs.slice(0, third)
     col2 = allCityLocs.slice(third, third * 2)
     col3 = allCityLocs.slice(third * 2)
-    col1Title = `${cityInfo.name} Escorts`
-    col2Title = `More In ${cityInfo.name}`
-    col3Title = `Also In ${cityInfo.name}`
+    col1Title = `${activeCityInfo.name} Escorts`
+    col2Title = `More In ${activeCityInfo.name}`
+    col3Title = `Also In ${activeCityInfo.name}`
   }
 
   return (
