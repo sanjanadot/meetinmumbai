@@ -39,34 +39,31 @@ export default function ServicesPage() {
               Explore our wide range of premium escort services tailored to your preferences.
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5">
             {services.map((service) => (
               <Link
                 key={service.slug}
                 href={`/${service.slug}`}
-                className="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+                className="group rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover bg-white/5"
               >
-                <div className="relative aspect-[2/3] overflow-hidden">
+                <div className="overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.name}
-                    fill
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                    className="object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                    width={400}
+                    height={560}
+                    style={{ width: '100%', height: 'auto' }}
+                    sizes="(max-width: 640px) 50vw, 25vw"
+                    className="group-hover:scale-105 transition-transform duration-500"
                   />
-                  {/* Permanent subtle gradient for legibility */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
-                  {/* Hover glow overlay */}
-                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  {/* Text at bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
-                    <h3 className="font-bold text-white font-serif text-sm sm:text-base leading-tight group-hover:text-yellow-400 transition-colors">
-                      {service.name}
-                    </h3>
-                    <span className="flex items-center gap-1 text-primary text-xs font-medium mt-1 translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                      View Details <ArrowRight size={11} />
-                    </span>
-                  </div>
+                </div>
+                <div className="p-3 sm:p-4">
+                  <h3 className="font-bold text-white font-serif text-sm sm:text-base leading-tight group-hover:text-yellow-400 transition-colors">
+                    {service.name}
+                  </h3>
+                  <span className="flex items-center gap-1 text-primary text-xs font-medium mt-1.5">
+                    View Details <ArrowRight size={11} />
+                  </span>
                 </div>
               </Link>
             ))}
