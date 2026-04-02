@@ -73,38 +73,60 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <Footer />
         </div>
 
-        {/* Organization Schema */}
+        {/* Organization + WebSite Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'Meet in Mumbai',
-              url: 'https://meetinmumbai.com',
-              logo: 'https://meetinmumbai.com/images/saumya-logo.webp',
-              contactPoint: {
-                '@type': 'ContactPoint',
-                telephone: '+91-9038976363',
-                contactType: 'customer service',
-                areaServed: 'IN',
-                availableLanguage: ['English', 'Hindi'],
-                hoursAvailable: {
-                  '@type': 'OpeningHoursSpecification',
-                  dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
-                  opens: '00:00',
-                  closes: '23:59',
+              '@graph': [
+                {
+                  '@type': 'Organization',
+                  '@id': 'https://meetinmumbai.com/#organization',
+                  name: 'Meet in Mumbai',
+                  url: 'https://meetinmumbai.com',
+                  logo: 'https://meetinmumbai.com/images/saumya-logo.webp',
+                  contactPoint: {
+                    '@type': 'ContactPoint',
+                    telephone: '+91-9038976363',
+                    contactType: 'customer service',
+                    areaServed: 'IN',
+                    availableLanguage: ['English', 'Hindi'],
+                    hoursAvailable: {
+                      '@type': 'OpeningHoursSpecification',
+                      dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+                      opens: '00:00',
+                      closes: '23:59',
+                    },
+                  },
+                  address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: 'Azad Nagar, Sakinaka',
+                    addressLocality: 'Mumbai',
+                    addressRegion: 'Maharashtra',
+                    postalCode: '400068',
+                    addressCountry: 'IN',
+                  },
+                  sameAs: [],
                 },
-              },
-              address: {
-                '@type': 'PostalAddress',
-                streetAddress: 'Azad Nagar, Sakinaka',
-                addressLocality: 'Mumbai',
-                addressRegion: 'Maharashtra',
-                postalCode: '400068',
-                addressCountry: 'IN',
-              },
-              sameAs: [],
+                {
+                  '@type': 'WebSite',
+                  '@id': 'https://meetinmumbai.com/#website',
+                  url: 'https://meetinmumbai.com',
+                  name: 'Meet in Mumbai',
+                  description: 'Premium escort and spa services across India',
+                  publisher: { '@id': 'https://meetinmumbai.com/#organization' },
+                  potentialAction: {
+                    '@type': 'SearchAction',
+                    target: {
+                      '@type': 'EntryPoint',
+                      urlTemplate: 'https://meetinmumbai.com/location?q={search_term_string}',
+                    },
+                    'query-input': 'required name=search_term_string',
+                  },
+                  inLanguage: 'en-IN',
+                },
+              ],
             }),
           }}
         />

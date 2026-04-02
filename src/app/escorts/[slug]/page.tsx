@@ -61,30 +61,57 @@ export default function LocationPage({ params }: Props) {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: `Escorts in ${location.name}`,
-    alternateName: [`Call Girls in ${location.name}`, `${location.name} Escort Service`],
-    url: `https://meetinmumbai.com/escorts/${params.slug}`,
-    description: `Premium escorts in ${location.name} offering professional companionship services. Verified call girls available 24/7.`,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: location.name,
-      addressRegion: location.state,
-      addressCountry: 'IN',
-      postalCode: location.postalCode,
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: location.lat,
-      longitude: location.lng,
-    },
-    telephone: '+919038976363',
-    priceRange: '₹₹₹',
-    serviceArea: {
-      '@type': 'GeoCircle',
-      geoMidpoint: { '@type': 'GeoCoordinates', latitude: location.lat, longitude: location.lng },
-      geoRadius: '50000',
-    },
+    '@graph': [
+      {
+        '@type': 'LocalBusiness',
+        '@id': `https://meetinmumbai.com/escorts/${params.slug}#business`,
+        name: `Escorts in ${location.name}`,
+        alternateName: [`Call Girls in ${location.name}`, `${location.name} Escort Service`],
+        url: `https://meetinmumbai.com/escorts/${params.slug}`,
+        description: `Premium escorts in ${location.name} offering professional companionship services. Verified call girls available 24/7.`,
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: location.name,
+          addressRegion: location.state,
+          addressCountry: 'IN',
+          postalCode: location.postalCode,
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: location.lat,
+          longitude: location.lng,
+        },
+        telephone: '+919038976363',
+        priceRange: '₹₹₹',
+        image: location.image ? `https://meetinmumbai.com${location.image}` : undefined,
+        serviceArea: {
+          '@type': 'GeoCircle',
+          geoMidpoint: { '@type': 'GeoCoordinates', latitude: location.lat, longitude: location.lng },
+          geoRadius: '50000',
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://meetinmumbai.com' },
+          { '@type': 'ListItem', position: 2, name: 'Locations', item: 'https://meetinmumbai.com/location' },
+          { '@type': 'ListItem', position: 3, name: `Escorts in ${location.name}`, item: `https://meetinmumbai.com/escorts/${params.slug}` },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: `How do I book an escort in ${location.name}?`, acceptedAnswer: { '@type': 'Answer', text: `Fill out our Book Now form or call us at +91-9038976363. Our team confirms your ${location.name} booking within 30 minutes.` } },
+          { '@type': 'Question', name: 'Are your escorts verified?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, all escorts undergo thorough background checks and personal interviews before being listed on our platform.' } },
+          { '@type': 'Question', name: 'What is the pricing?', acceptedAnswer: { '@type': 'Answer', text: 'Prices range from ₹8,000 to ₹50,000 based on the companion type, duration, and service required.' } },
+          { '@type': 'Question', name: 'Do you offer incall and outcall?', acceptedAnswer: { '@type': 'Answer', text: `Yes, both incall and outcall services are available in ${location.name}. Please specify your preference when booking.` } },
+          { '@type': 'Question', name: `How quickly can an escort reach me in ${location.name}?`, acceptedAnswer: { '@type': 'Answer', text: `Escorts typically arrive within 25–30 minutes in ${location.name}. ETA is confirmed at the time of booking.` } },
+          { '@type': 'Question', name: 'Is my information kept confidential?', acceptedAnswer: { '@type': 'Answer', text: 'Absolutely. All personal details are kept strictly confidential and never shared with any third party.' } },
+          { '@type': 'Question', name: 'What payment methods do you accept?', acceptedAnswer: { '@type': 'Answer', text: 'Cash only, paid at the time of the booking. No advance payment or bank transfer required.' } },
+          { '@type': 'Question', name: 'Do you operate 24/7?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, our services are available round the clock, every day of the year including late nights and holidays.' } },
+        ],
+      },
+    ],
   }
 
   return (

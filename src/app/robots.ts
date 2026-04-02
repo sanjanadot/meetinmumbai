@@ -9,7 +9,10 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/api/booking', '/api/contact'],
       },
     ],
-    sitemap: 'https://meetinmumbai.com/sitemap.xml',
+    sitemap: [
+      'https://meetinmumbai.com/sitemap.xml',
+      'https://meetinmumbai.com/image-sitemap.xml',
+    ],
     host: 'https://meetinmumbai.com',
   }
 }

@@ -88,31 +88,57 @@ export default function SpaCenterPage({ params }: Props) {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `https://meetinmumbai.com/spa-center/${params.slug}`,
-    name: `Spa Center in ${displayName}`,
-    alternateName: [`Body Massage in ${displayName}`, `${displayName} Spa Service`],
-    url: `https://meetinmumbai.com/spa-center/${params.slug}`,
-    description: `Premium spa center in ${displayName} offering professional massage and wellness services. Available 24/7.`,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: displayName,
-      addressRegion: displayState,
-      addressCountry: 'IN',
-      ...(postalCode ? { postalCode } : {}),
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: lat,
-      longitude: lng,
-    },
-    telephone: '+919038976363',
-    priceRange: '₹₹₹',
-    serviceArea: {
-      '@type': 'GeoCircle',
-      geoMidpoint: { '@type': 'GeoCoordinates', latitude: lat, longitude: lng },
-      geoRadius: '50000',
-    },
+    '@graph': [
+      {
+        '@type': 'LocalBusiness',
+        '@id': `https://meetinmumbai.com/spa-center/${params.slug}#business`,
+        name: `Spa Center in ${displayName}`,
+        alternateName: [`Body Massage in ${displayName}`, `${displayName} Spa Service`],
+        url: `https://meetinmumbai.com/spa-center/${params.slug}`,
+        description: `Premium spa center in ${displayName} offering professional massage and wellness services. Available 24/7.`,
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: displayName,
+          addressRegion: displayState,
+          addressCountry: 'IN',
+          ...(postalCode ? { postalCode } : {}),
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: lat,
+          longitude: lng,
+        },
+        telephone: '+919038976363',
+        priceRange: '₹₹₹',
+        image: `https://meetinmumbai.com${heroImage}`,
+        serviceArea: {
+          '@type': 'GeoCircle',
+          geoMidpoint: { '@type': 'GeoCoordinates', latitude: lat, longitude: lng },
+          geoRadius: '50000',
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://meetinmumbai.com' },
+          { '@type': 'ListItem', position: 2, name: 'Locations', item: 'https://meetinmumbai.com/location' },
+          { '@type': 'ListItem', position: 3, name: `Spa Center in ${displayName}`, item: `https://meetinmumbai.com/spa-center/${params.slug}` },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: `How do I book a spa session in ${displayName}?`, acceptedAnswer: { '@type': 'Answer', text: `Fill out our Book Now form or call us at +91-9038976363. Our team confirms your ${displayName} spa booking within 30 minutes.` } },
+          { '@type': 'Question', name: 'Are your therapists verified?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, all spa therapists undergo thorough background checks and personal screenings before being listed on our platform.' } },
+          { '@type': 'Question', name: 'What is the pricing?', acceptedAnswer: { '@type': 'Answer', text: 'Prices range from ₹2,000 to ₹15,000 based on the massage type, duration, and package selected.' } },
+          { '@type': 'Question', name: 'Do you offer in-home and hotel service?', acceptedAnswer: { '@type': 'Answer', text: `Yes, both in-home and hotel spa services are available in ${displayName}. Specify your preference when booking.` } },
+          { '@type': 'Question', name: `How quickly can a therapist reach me in ${displayName}?`, acceptedAnswer: { '@type': 'Answer', text: `Therapists typically arrive within 25–30 minutes in ${displayName}. ETA is confirmed at the time of booking.` } },
+          { '@type': 'Question', name: 'Is my information kept confidential?', acceptedAnswer: { '@type': 'Answer', text: 'Absolutely. All personal details are kept strictly confidential and never shared with any third party.' } },
+          { '@type': 'Question', name: 'What types of massages are available?', acceptedAnswer: { '@type': 'Answer', text: 'We offer Swedish, deep tissue, body to body, Thai, Balinese, aromatherapy, sensual, nuru, and more.' } },
+          { '@type': 'Question', name: 'Do you operate 24/7?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, our spa services are available round the clock, every day of the year including late nights and holidays.' } },
+        ],
+      },
+    ],
   }
 
   return (
