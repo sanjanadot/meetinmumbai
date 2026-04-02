@@ -36,7 +36,7 @@ function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Your Name *</label>
+          <label htmlFor="name" className="form-label">Your Name *</label>
           <input
             id="name"
             name="name"
@@ -49,7 +49,7 @@ function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+          <label htmlFor="email" className="form-label">Email Address *</label>
           <input
             id="email"
             name="email"
@@ -64,7 +64,7 @@ function ContactForm() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+          <label htmlFor="phone" className="form-label">Phone Number *</label>
           <input
             id="phone"
             name="phone"
@@ -77,7 +77,7 @@ function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+          <label htmlFor="subject" className="form-label">Subject</label>
           <input
             id="subject"
             name="subject"
@@ -90,7 +90,7 @@ function ContactForm() {
         </div>
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message *</label>
+        <label htmlFor="message" className="form-label">Message *</label>
         <textarea
           id="message"
           name="message"
@@ -117,7 +117,7 @@ function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="flex items-center gap-2 px-8 py-3 bg-primary text-white font-semibold rounded hover:bg-primary-dark transition-colors disabled:opacity-60"
+        className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-primary to-rose-700 text-white font-semibold rounded-xl hover:shadow-glow-red transition-all disabled:opacity-60"
       >
         <Send size={16} />
         {status === 'loading' ? 'Sending...' : 'Send Message'}
@@ -134,41 +134,44 @@ export default function ContactPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'About Us', href: '/about-us' }, { label: 'Contact Us' }]}
       />
 
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-gray-950 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-transparent" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Get in touch with us</h2>
-              <p className="text-gray-600 mb-8 leading-relaxed">
+              <span className="label-eyebrow">Get In Touch</span>
+              <h2 className="text-4xl font-bold font-serif text-white mb-3">Get in touch with us</h2>
+              <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-yellow-500 rounded-full mb-6" />
+              <p className="text-gray-400 mb-8 leading-relaxed">
                 Our team of Escorts professionals are always ready to answer your Escorts related questions. Fill out the form and an agent will contact you shortly.
               </p>
               <address className="not-italic space-y-4">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center shrink-0">
                     <MapPin size={18} className="text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">Address</p>
-                    <p className="text-gray-600">Azad Nagar, Rajesh Compound, Andheri East, Mumbai - 400068</p>
+                    <p className="font-medium text-white">Address</p>
+                    <p className="text-gray-400">Azad Nagar, Rajesh Compound, Andheri East, Mumbai - 400068</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center shrink-0">
                     <Phone size={18} className="text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">Phone</p>
-                    <a href="tel:+919038976363" className="text-gray-600 hover:text-primary transition-colors">+91-9038976363</a>
+                    <p className="font-medium text-white">Phone</p>
+                    <a href="tel:+919038976363" className="text-gray-400 hover:text-yellow-400 transition-colors">+91-9038976363</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center shrink-0">
                     <Mail size={18} className="text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">Email</p>
-                    <a href="mailto:sanjanadotsingh@gmail.com" className="text-gray-600 hover:text-primary transition-colors">sanjanadotsingh@gmail.com</a>
+                    <p className="font-medium text-white">Email</p>
+                    <a href="mailto:sanjanadotsingh@gmail.com" className="text-gray-400 hover:text-yellow-400 transition-colors">sanjanadotsingh@gmail.com</a>
                   </div>
                 </div>
               </address>
@@ -176,7 +179,7 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+              <h2 className="text-2xl font-bold font-serif text-white mb-6">Send Us a Message</h2>
               <ContactForm />
             </div>
           </div>

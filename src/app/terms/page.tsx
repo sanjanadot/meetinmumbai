@@ -19,9 +19,14 @@ export default function TermsPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Terms & Conditions' }]}
       />
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-950">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="prose prose-gray max-w-none">
+          <div className="mb-10">
+            <span className="label-eyebrow">Legal Information</span>
+            <h2 className="text-3xl font-bold font-serif text-white mt-3 mb-2">Terms &amp; Conditions</h2>
+            <div className="section-divider" />
+          </div>
+          <div className="max-w-none [&_h2]:!text-white [&_p]:!text-gray-400 [&_li]:!text-gray-400 [&_address]:!text-gray-400 [&_strong]:!text-white [&_a]:!text-yellow-400">
             <p className="text-gray-500 text-sm mb-8">Last updated: April 1, 2026</p>
 
             <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>

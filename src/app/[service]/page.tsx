@@ -56,49 +56,55 @@ export default function ServicePage({ params }: Props) {
       />
 
       {/* Hero */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <section className="py-16 bg-gray-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-yellow-900/5" />
+        <div className="container mx-auto px-4 max-w-5xl relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <span className="label-eyebrow">Premium Service</span>
+              <h1 className="text-4xl md:text-5xl font-bold font-serif text-white mb-3">
                 {service.name} in Mumbai
               </h1>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Looking for premium <strong>{service.name}</strong> in Mumbai? Our exclusive selection of {service.name.toLowerCase()} are verified, professional, and available 24/7 for both incall and outcall services across Mumbai and India.
+              <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-yellow-500 rounded-full mb-6" />
+              <p className="text-gray-400 text-lg leading-relaxed mb-4">
+                Looking for premium <strong className="text-white">{service.name}</strong> in Mumbai? Our exclusive selection of {service.name.toLowerCase()} are verified, professional, and available 24/7 for both incall and outcall services across Mumbai and India.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-8">
+              <p className="text-gray-400 leading-relaxed mb-8">
                 We pride ourselves on providing only the finest {service.name.toLowerCase()} who are not just beautiful but also sophisticated, intelligent, and discreet. Whether you need a companion for a social event, business meeting, or private encounter, our {service.name.toLowerCase()} will exceed your expectations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/book-now" className="btn-primary text-center">
                   Book {service.shortName} Now
                 </Link>
-                <a href="tel:+919038976363" className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary text-primary font-semibold rounded hover:bg-primary hover:text-white transition-colors">
+                <a href="tel:+919038976363" className="flex items-center justify-center gap-2 px-6 py-3 border-2 border-yellow-500/50 text-yellow-400 font-semibold rounded-xl hover:bg-yellow-500/10 transition-colors">
                   <Phone size={18} />
                   +91-9038976363
                 </a>
               </div>
             </div>
-            <div className="relative h-72 lg:h-96 rounded-xl overflow-hidden shadow-xl">
-              <Image
-                src={service.image}
-                alt={service.name}
-                fill
-                className="object-cover"
-                priority
-              />
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/15 to-yellow-500/10 rounded-3xl blur-2xl" />
+              <div className="relative h-72 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src={service.image}
+                  alt={service.name}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          <h2 className="text-3xl font-bold font-serif text-white mb-8 text-center">
             Why Choose Our {service.name}?
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
             {[
               { title: 'Verified & Safe', desc: `All our ${service.name.toLowerCase()} are personally verified for safety and quality.` },
               { title: 'Premium Quality', desc: 'Hand-picked companions with beauty, intelligence, and professionalism.' },
@@ -107,11 +113,11 @@ export default function ServicePage({ params }: Props) {
               { title: 'Quick Response', desc: 'Our team confirms bookings within 30 minutes of your request.' },
               { title: 'Incall & Outcall', desc: 'Services available at our locations or we can come to your hotel/residence.' },
             ].map((f) => (
-              <div key={f.title} className="bg-white rounded-lg p-5 shadow-sm flex items-start gap-3">
+              <div key={f.title} className="group bg-white/5 border border-white/10 hover:border-primary/40 rounded-xl p-5 flex items-start gap-3 transition-all duration-300">
                 <CheckCircle size={20} className="text-primary shrink-0 mt-0.5" />
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">{f.title}</h3>
-                  <p className="text-gray-600 text-sm">{f.desc}</p>
+                  <h3 className="font-semibold text-white mb-1">{f.title}</h3>
+                  <p className="text-gray-400 text-sm">{f.desc}</p>
                 </div>
               </div>
             ))}
@@ -120,16 +126,16 @@ export default function ServicePage({ params }: Props) {
       </section>
 
       {/* Cities */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-gray-950">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+          <h2 className="text-2xl font-bold font-serif text-white mb-6 text-center">
             {service.name} Available In
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 max-w-4xl mx-auto">
             {locations.map((city) => (
-              <div key={city} className="bg-gray-50 rounded-lg p-3 text-center border border-gray-100">
-                <Star size={16} className="text-primary mx-auto mb-1" />
-                <p className="text-sm font-medium text-gray-700">{city}</p>
+              <div key={city} className="bg-white/5 border border-white/10 hover:border-primary/40 rounded-xl p-3 text-center transition-colors">
+                <Star size={14} className="text-yellow-400 mx-auto mb-1" />
+                <p className="text-sm font-medium text-gray-300">{city}</p>
               </div>
             ))}
           </div>
@@ -137,17 +143,17 @@ export default function ServicePage({ params }: Props) {
       </section>
 
       {/* Other Services */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Other Escort Services</h2>
+          <h2 className="text-2xl font-bold font-serif text-white mb-6">Other Escort Services</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
             {services.filter((s) => s.slug !== params.service).slice(0, 12).map((s) => (
               <Link
                 key={s.slug}
                 href={`/${s.slug}`}
-                className="flex items-center gap-2 bg-white rounded-lg px-4 py-3 text-sm font-medium text-gray-700 hover:text-primary hover:shadow-md transition-all border border-gray-100"
+                className="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-primary/40 hover:text-yellow-400 rounded-xl px-4 py-3 text-sm font-medium text-gray-400 transition-all duration-200"
               >
-                <ArrowRight size={14} className="text-primary shrink-0" />
+                <ArrowRight size={13} className="text-primary shrink-0" />
                 {s.name}
               </Link>
             ))}
@@ -156,15 +162,15 @@ export default function ServicePage({ params }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="py-12 bg-primary text-white text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Book {service.name} Now</h2>
-          <p className="text-red-100 mb-6">Premium {service.name.toLowerCase()} available 24/7 across Mumbai and India</p>
+      <section className="py-16 bg-gray-950 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-yellow-900/10" />
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-3xl font-bold font-serif text-white mb-4">Book {service.name} Now</h2>
+          <p className="text-gray-400 mb-8">Premium {service.name.toLowerCase()} available 24/7 across Mumbai and India</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/book-now" className="px-8 py-3 bg-white text-primary font-bold rounded hover:bg-gray-100 transition-colors">
-              Book Now
-            </Link>
-            <a href="tel:+919038976363" className="px-8 py-3 border-2 border-white text-white font-bold rounded hover:bg-white hover:text-primary transition-colors flex items-center justify-center gap-2">
+            <Link href="/book-now" className="btn-primary">Book Now</Link>
+            <a href="tel:+919038976363" className="px-8 py-3 border-2 border-yellow-500/50 text-yellow-400 font-bold rounded-xl hover:bg-yellow-500/10 transition-all flex items-center justify-center gap-2">
               <Phone size={18} />
               +91-9038976363
             </a>

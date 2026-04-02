@@ -38,30 +38,33 @@ export default function GalleryPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Gallery' }]}
       />
 
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Escorts Gallery</h2>
-          <p className="text-gray-600 text-lg">
+      <section className="py-14 bg-gray-950 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-transparent" />
+        <div className="container mx-auto px-4 text-center max-w-3xl relative z-10">
+          <span className="label-eyebrow">Gallery</span>
+          <h2 className="text-4xl font-bold font-serif text-white mb-3">Our Escorts Gallery</h2>
+          <div className="section-divider" />
+          <p className="text-gray-400 text-lg">
             Browse our exclusive gallery of premium escorts available across India. All escorts are verified and available 24/7.
           </p>
         </div>
       </section>
 
-      <section className="pb-16 bg-white">
+      <section className="pb-16 bg-gray-900 pt-4">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {galleryImages.map((img, i) => (
-              <div key={i} className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+              <div key={i} className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1">
                 <div className="relative h-64">
                   <Image
                     src={img.src}
                     alt={img.alt}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-end">
-                    <div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                      <p className="font-semibold">{img.label} Escorts</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end">
+                    <div className="p-4 text-white">
+                      <p className="font-semibold font-serif text-yellow-400">{img.label} Escorts</p>
                     </div>
                   </div>
                 </div>
@@ -70,19 +73,18 @@ export default function GalleryPage() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-gray-600 mb-4">View more escorts in your city</p>
+            <p className="text-gray-500 mb-4">View more escorts in your city</p>
             <Link href="/location" className="btn-primary">Browse All Locations</Link>
           </div>
         </div>
       </section>
 
-      <section className="py-12 bg-primary text-white text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-4">Like What You See?</h2>
-          <p className="text-red-100 mb-6">Book your preferred escort now for an unforgettable experience</p>
-          <Link href="/book-now" className="inline-block px-8 py-3 bg-white text-primary font-bold rounded hover:bg-gray-100 transition-colors">
-            Book Now
-          </Link>
+      <section className="py-16 bg-gray-950 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-yellow-900/10" />
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-3xl font-bold font-serif text-white mb-4">Like What You See?</h2>
+          <p className="text-gray-400 mb-8">Book your preferred escort now for an unforgettable experience</p>
+          <Link href="/book-now" className="btn-primary">Book Now</Link>
         </div>
       </section>
 

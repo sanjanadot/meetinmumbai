@@ -38,11 +38,14 @@ export default function AboutPage() {
       />
 
       {/* Intro Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gray-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-yellow-900/5" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">The Rise of Escort Services in Mumbai</h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">
+            <span className="label-eyebrow">Our Story</span>
+            <h2 className="text-4xl md:text-5xl font-bold font-serif text-white mb-4">The Rise of Escort Services in Mumbai</h2>
+            <div className="section-divider" />
+            <p className="text-gray-400 text-lg leading-relaxed">
               As the city attracts individuals from all walks of life—business professionals, tourists, and residents alike—there is a growing demand for professional and discreet escort services in Mumbai. These services have evolved over the years, offering more than just companionship.
             </p>
           </div>
@@ -50,16 +53,17 @@ export default function AboutPage() {
       </section>
 
       {/* Features */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-900">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((f) => (
-              <div key={f.title} className="bg-white rounded-lg p-6 shadow-sm text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-red-50 text-primary mb-4">
+              <div key={f.title} className="group bg-white/5 border border-white/10 hover:border-primary/40 rounded-2xl p-6 text-center transition-all duration-300 relative overflow-hidden">
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-yellow-500 group-hover:w-full transition-all duration-500" />
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-rose-700/10 text-primary mb-4">
                   <f.icon size={24} />
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">{f.title}</h3>
-                <p className="text-gray-600 text-sm">{f.desc}</p>
+                <h3 className="font-bold text-white mb-2 font-serif">{f.title}</h3>
+                <p className="text-gray-400 text-sm">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -67,21 +71,26 @@ export default function AboutPage() {
       </section>
 
       {/* About Content */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-gray-950">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-80 lg:h-96 rounded-xl overflow-hidden shadow-xl">
-              <Image src="/images/escorts-banner.webp" alt="About Saumya Basu Escorts" fill className="object-cover" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div className="relative">
+              <div className="absolute -inset-6 bg-gradient-to-r from-primary/15 to-yellow-500/15 rounded-3xl blur-2xl" />
+              <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
+                <Image src="/images/escorts-banner.webp" alt="About Saumya Basu Escorts" fill className="object-cover" />
+              </div>
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Who We Are</h2>
-              <p className="text-gray-600 mb-4 leading-relaxed">
+              <span className="label-eyebrow">Who We Are</span>
+              <h2 className="text-4xl font-bold font-serif text-white mb-3">Mumbai&apos;s Premier<br /><span className="bg-gradient-to-r from-primary to-rose-400 bg-clip-text text-transparent">Escort Agency</span></h2>
+              <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-yellow-500 rounded-full mb-6" />
+              <p className="text-gray-400 mb-4 leading-relaxed">
                 Meet in Mumbai is a premier escort services agency that has been serving clients across Mumbai and India for over a decade. We are committed to providing the highest quality companionship services with an emphasis on privacy, safety, and satisfaction.
               </p>
-              <p className="text-gray-600 mb-4 leading-relaxed">
+              <p className="text-gray-400 mb-4 leading-relaxed">
                 Our carefully curated selection of escorts includes models, actresses, college students, and professionals from all walks of life. Each escort is personally verified to ensure they meet our high standards of beauty, intelligence, and professionalism.
               </p>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-400 mb-8 leading-relaxed">
                 Whether you need a companion for a corporate event, a dinner date, or a private encounter, we have the perfect match for you. Our services are available 24/7 across Mumbai, Pune, Delhi, Bangalore, and many other cities.
               </p>
               <Link href="/contact" className="btn-primary">Get In Touch</Link>
@@ -91,13 +100,13 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-primary text-white">
+      <section className="py-16 bg-gradient-to-r from-gray-950 via-gray-900 to-gray-950 border-y border-primary/20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((s) => (
               <div key={s.label}>
-                <div className="text-4xl font-extrabold mb-2">{s.value}</div>
-                <div className="text-red-100">{s.label}</div>
+                <div className="text-4xl md:text-5xl font-extrabold font-serif bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent mb-2">{s.value}</div>
+                <div className="text-gray-400 text-xs uppercase tracking-widest font-medium">{s.label}</div>
               </div>
             ))}
           </div>

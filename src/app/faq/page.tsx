@@ -70,23 +70,26 @@ export default function FAQPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'FAQs' }]}
       />
 
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Got Questions?</h2>
-          <p className="text-gray-600 text-lg">Find answers to the most commonly asked questions about our escort services in Mumbai and India.</p>
+      <section className="py-14 bg-gray-950 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-transparent" />
+        <div className="container mx-auto px-4 text-center max-w-3xl relative z-10">
+          <span className="label-eyebrow">FAQ</span>
+          <h2 className="text-4xl font-bold font-serif text-white mb-3">Got Questions?</h2>
+          <div className="section-divider" />
+          <p className="text-gray-400 text-lg">Find answers to the most commonly asked questions about our escort services in Mumbai and India.</p>
         </div>
       </section>
 
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-gray-900">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="space-y-4">
+          <div className="space-y-3">
             {faqs.map((faq, i) => (
-              <details key={i} className="bg-white rounded-lg shadow-sm border border-gray-100 group">
-                <summary className="flex items-center justify-between p-6 cursor-pointer font-semibold text-gray-900 hover:text-primary list-none">
+              <details key={i} className="group bg-white/5 border border-white/10 hover:border-primary/30 rounded-xl transition-colors">
+                <summary className="flex items-center justify-between p-6 cursor-pointer font-semibold text-white hover:text-yellow-400 list-none transition-colors">
                   <span>{faq.q}</span>
-                  <span className="text-primary text-xl group-open:rotate-45 transition-transform">+</span>
+                  <span className="text-primary text-2xl group-open:rotate-45 transition-transform duration-200">+</span>
                 </summary>
-                <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                <div className="px-6 pb-6 text-gray-400 leading-relaxed border-t border-white/5 pt-4">
                   {faq.a}
                 </div>
               </details>
@@ -129,13 +132,12 @@ export default function FAQPage() {
         }}
       />
 
-      <section className="py-12 bg-primary text-white text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-4">Still Have Questions?</h2>
-          <p className="text-red-100 mb-6">Contact our team and we will be happy to help</p>
-          <Link href="/contact" className="inline-block px-8 py-3 bg-white text-primary font-bold rounded hover:bg-gray-100 transition-colors">
-            Contact Us
-          </Link>
+      <section className="py-16 bg-gray-950 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-yellow-900/10" />
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-3xl font-bold font-serif text-white mb-4">Still Have Questions?</h2>
+          <p className="text-gray-400 mb-8">Contact our team and we will be happy to help</p>
+          <Link href="/contact" className="btn-primary">Contact Us</Link>
         </div>
       </section>
     </>
