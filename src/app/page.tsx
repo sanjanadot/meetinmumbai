@@ -336,7 +336,7 @@ export default function HomePage() {
             <div className="section-divider" />
             <p className="text-gray-400">Premium escort services in all major cities. Select your city to book instantly.</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-5">
             {([
               { name: 'Mumbai', slug: 'escorts-in-mumbai', image: '/images/mumbai/escorts-in-mumbai.webp' },
               { name: 'Delhi', slug: 'escorts-in-delhi', image: '/images/delhi/escorts-in-delhi.webp' },
@@ -348,6 +348,12 @@ export default function HomePage() {
               { name: 'Bhopal', slug: 'escorts-in-bhopal', image: '/images/bhopal/escorts-in-bhopal.webp' },
               { name: 'Goa', slug: 'escorts-in-goa', image: '/images/goa/escorts-in-goa.webp' },
               { name: 'Ahmedabad', slug: 'escorts-in-ahmedabad', image: '/images/ahmedabad/escorts-in-ahmedabad.webp' },
+              { name: 'Surat', slug: 'escorts-in-surat', image: '/images/surat/escorts-in-surat.webp' },
+              { name: 'Vadodara', slug: 'escorts-in-vadodara', image: '/images/vadodara/escorts-in-vadodara.webp' },
+              { name: 'Rajkot', slug: 'escorts-in-rajkot', image: '/images/rajkot/escorts-in-rajkot.webp' },
+              { name: 'Nashik', slug: 'escorts-in-nashik', image: '/images/nashik/escorts-in-nashik.webp' },
+              { name: 'Kanpur', slug: 'escorts-in-kanpur', image: '/images/kanpur/escorts-in-kanpur.webp' },
+              { name: 'Varanasi', slug: 'escorts-in-varanasi', image: '/images/varanasi/escorts-in-varanasi.webp' },
             ] as { name: string; slug: string; image: string }[]).map((city) => (
               <Link
                 key={city.slug}
@@ -361,7 +367,7 @@ export default function HomePage() {
                     width={400}
                     height={560}
                     style={{ width: '100%', height: 'auto' }}
-                    sizes="(max-width: 640px) 50vw, 20vw"
+                    sizes="(max-width: 640px) 50vw, 25vw"
                     className="group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -376,44 +382,51 @@ export default function HomePage() {
           </div>
           <div className="text-center mt-8">
             <Link href="/location" className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-medium text-sm transition-colors">
-              View all locations across India <Phone size={0} className="hidden" />
+              View all locations across India →
             </Link>
           </div>
         </div>
       </section>
 
       {/* ─── FAQ ────────────────────────────────────── */}
-      <section className="py-16 bg-gray-900 relative">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto mb-10">
+      <section className="py-16 bg-gray-900 relative overflow-hidden">
+        <div className="absolute -top-40 right-0 w-96 h-96 bg-primary/8 rounded-full filter blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-yellow-500/5 rounded-full filter blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="label-eyebrow">FAQ</span>
             <h2 className="text-3xl md:text-4xl font-bold font-serif text-white mt-3 mb-3">Frequently Asked Questions</h2>
             <div className="section-divider" />
-            <p className="text-gray-400">Everything you need to know about our escort services.</p>
+            <p className="text-gray-400">Everything you need to know about our premium escort services.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 max-w-5xl mx-auto">
             {[
-              { q: 'How do I book an escort?', a: 'Fill out our Book Now form or call us directly at +91-9038976363. Our team confirms your booking within 30 minutes.' },
-              { q: 'Are your escorts verified?', a: 'Yes, all escorts are thoroughly verified with background checks and personal interviews before being listed.' },
-              { q: 'What is the pricing?', a: 'Prices range from ₹8,000 to ₹50,000 based on the type of companion, duration, and service required.' },
+              { q: 'How do I book an escort?', a: 'Fill out our Book Now form or call us at +91-9038976363. Our team confirms your booking within 30 minutes.' },
+              { q: 'Are your escorts verified?', a: 'Yes, all escorts undergo thorough background checks and personal interviews before being listed on our platform.' },
+              { q: 'What is the pricing?', a: 'Prices range from ₹8,000 to ₹50,000 based on the companion type, duration, and service required.' },
               { q: 'Do you offer incall and outcall?', a: 'Yes, both incall and outcall services are available. Please specify your preference when booking.' },
-              { q: 'How quickly can an escort reach me?', a: 'Within Mumbai, escorts typically arrive within 25–30 minutes. We provide an ETA at the time of confirmation.' },
-              { q: 'Is my information kept confidential?', a: 'Absolutely. All personal details are strictly confidential and never shared with any third party.' },
-              { q: 'Which cities do you serve?', a: 'We serve Mumbai, Pune, Delhi, Bangalore, Jaipur, Lucknow, Indore, Bhopal, Goa, Ahmedabad, and 100+ more cities.' },
-              { q: 'What payment methods do you accept?', a: 'We accept cash payments only, made at the time of the booking. No advance transfer required.' },
-              { q: 'Can I choose a specific escort?', a: 'Yes, browse our gallery and select your preferred escort. We arrange based on availability.' },
-              { q: 'Are there age restrictions?', a: 'All escorts are 18+ and clients must also be at least 18 years old. We strictly follow all applicable laws.' },
-              { q: 'What if I need to cancel?', a: 'Inform us as early as possible. Cancellations with less than 2 hours notice may incur a small fee.' },
-              { q: 'Do you operate 24/7?', a: 'Yes, our services are available round the clock, every day of the year including late nights.' },
+              { q: 'How quickly can an escort reach me?', a: 'Within Mumbai, escorts typically arrive within 25–30 minutes. ETA is confirmed at the time of booking.' },
+              { q: 'Is my information kept confidential?', a: 'Absolutely. All personal details are kept strictly confidential and never shared with any third party.' },
+              { q: 'Which cities do you serve?', a: 'We serve Mumbai, Pune, Delhi, Bangalore, Jaipur, Lucknow, Indore, Bhopal, Goa, Ahmedabad, and 100+ cities.' },
+              { q: 'What payment methods do you accept?', a: 'Cash only, paid at the time of the booking. No advance payment or bank transfer required.' },
+              { q: 'Can I choose a specific escort?', a: 'Yes, browse our gallery and select your preferred companion. We confirm based on availability.' },
+              { q: 'Are there age restrictions?', a: 'All escorts and clients must be at least 18 years old. We strictly adhere to all applicable laws.' },
+              { q: 'What if I need to cancel?', a: 'Inform us as early as possible. Cancellations under 2 hours notice may incur a nominal inconvenience fee.' },
+              { q: 'Do you operate 24/7?', a: 'Yes, our services are available round the clock, every day of the year including late nights and holidays.' },
             ].map((faq, i) => (
-              <div key={i} className="bg-white/5 border border-white/10 hover:border-primary/30 rounded-xl p-5 transition-all duration-200">
-                <h3 className="font-semibold text-white mb-2 text-sm sm:text-base">{faq.q}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{faq.a}</p>
+              <div key={i} className="group flex gap-4 bg-white/5 border border-white/10 hover:border-primary/40 hover:bg-white/8 rounded-2xl p-5 transition-all duration-200">
+                <div className="shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-rose-700 flex items-center justify-center text-white text-xs font-bold font-serif mt-0.5">
+                  {i + 1}
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white mb-1.5 text-sm sm:text-base group-hover:text-yellow-400 transition-colors">{faq.q}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{faq.a}</p>
+                </div>
               </div>
             ))}
           </div>
-          <div className="text-center mt-8">
-            <Link href="/faq" className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-medium text-sm transition-colors">
+          <div className="text-center mt-10">
+            <Link href="/faq" className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-semibold text-sm transition-colors">
               View all FAQs →
             </Link>
           </div>
