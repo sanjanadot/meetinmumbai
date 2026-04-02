@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react'
 import { usePathname } from 'next/navigation'
-import { cityFooterData } from '@/data/footerCityData'
+import { getLocationsByCityFolder } from '@/data/locations'
+import { getCityBySlug } from '@/data/cities'
 
 const SocialIcons = {
   Facebook: () => (
@@ -99,14 +100,28 @@ export default function Footer() {
   // Detect city page: /city/[slug]
   const cityMatch = pathname?.match(/^\/city\/([^/]+)$/)
   const citySlug = cityMatch?.[1] ?? null
-  const cityData = citySlug ? cityFooterData[citySlug] : null
+  const cityInfo = citySlug ? getCityBySlug(citySlug) : null
 
-  const col1 = cityData?.col1 ?? footerServices
-  const col2 = cityData?.col2 ?? moreServices
-  const col3 = cityData?.col3 ?? additionalServices
-  const col1Title = cityData ? `${cityData.cityName} Escorts` : 'Our Services'
-  const col2Title = cityData ? `More In ${cityData.cityName}` : 'More Services'
-  const col3Title = cityData ? `Also In ${cityData.cityName}` : 'Also Available In'
+  // Build city-specific columns from ALL locations with images
+  let col1 = footerServices
+  let col2 = moreServices
+  let col3 = additionalServices
+  let col1Title = 'Our Services'
+  let col2Title = 'More Services'
+  let col3Title = 'Also Available In'
+
+  if (cityInfo) {
+    const allCityLocs = getLocationsByCityFolder(cityInfo.folder)
+      .filter((l) => l.image)
+      .map((l) => ({ href: `/escorts-in/${l.slug}`, label: `Escorts In ${l.name}` }))
+    const third = Math.ceil(allCityLocs.length / 3)
+    col1 = allCityLocs.slice(0, third)
+    col2 = allCityLocs.slice(third, third * 2)
+    col3 = allCityLocs.slice(third * 2)
+    col1Title = `${cityInfo.name} Escorts`
+    col2Title = `More In ${cityInfo.name}`
+    col3Title = `Also In ${cityInfo.name}`
+  }
 
   return (
     <footer className="bg-gray-950 text-gray-400">
