@@ -391,26 +391,43 @@ export default function CityPage({ params }: { params: { slug: string } }) {
       </section>
 
       {/* ─── OTHER CITIES ───────────────────────── */}
-      <section className="py-14 bg-gray-950 relative">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-gray-950 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-transparent" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="label-eyebrow">Other Cities</span>
-            <h2 className="text-2xl md:text-3xl font-bold font-serif text-white mt-3 mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold font-serif text-white mt-3 mb-3">
               Escorts Available Across India
             </h2>
             <div className="section-divider" />
+            <p className="text-gray-400">Premium escort services in all major cities. Select your city to book instantly.</p>
           </div>
-          <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-5">
             {cities
               .filter((c) => c.slug !== params.slug)
               .map((c) => (
                 <Link
                   key={c.slug}
                   href={`/city/${c.slug}`}
-                  className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium hover:bg-primary/15 hover:border-primary/50 hover:text-white transition-all duration-200 flex items-center gap-2"
+                  className="group rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover bg-white/5"
                 >
-                  <MapPin size={12} className="text-primary" />
-                  {c.name}
+                  <div className="overflow-hidden">
+                    <Image
+                      src={c.heroImage}
+                      alt={`Escorts in ${c.name}`}
+                      width={400}
+                      height={560}
+                      style={{ width: '100%', height: 'auto' }}
+                      sizes="(max-width: 640px) 50vw, 25vw"
+                      className="group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-3 sm:p-4 flex items-center gap-2">
+                    <MapPin size={13} className="text-primary shrink-0" />
+                    <h3 className="font-bold text-white font-serif text-sm sm:text-base leading-tight group-hover:text-yellow-400 transition-colors">
+                      {c.name}
+                    </h3>
+                  </div>
                 </Link>
               ))}
           </div>
