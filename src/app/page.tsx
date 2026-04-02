@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Phone, CheckCircle, Star, Clock, Shield, Quote, MapPin } from 'lucide-react'
+import { Phone, CheckCircle, Star, Clock, Shield, Quote, MapPin, Award, Users, Zap } from 'lucide-react'
 import { getMumbaiLocations } from '@/data/locations'
 import { services } from '@/data/services'
 
@@ -384,6 +384,123 @@ export default function HomePage() {
             <Link href="/location" className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-medium text-sm transition-colors">
               View all locations across India →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SEO CONTENT ──────────────────────────── */}
+      <section className="py-16 bg-gray-950">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-10">
+              <span className="label-eyebrow">Escorts In Mumbai</span>
+              <h2 className="text-3xl md:text-4xl font-bold font-serif text-white mt-3 mb-3">Mumbai Escorts Service — Premium Companionship</h2>
+              <div className="section-divider" />
+            </div>
+            <div className="space-y-8 text-gray-400 leading-relaxed">
+              <p>
+                Mumbai, the city that never sleeps, is home to India&apos;s most sought-after escort services. Whether you are a business traveller, a tourist, or a Mumbai resident seeking the finest companionship, <strong className="text-white">Meet in Mumbai</strong> offers a curated selection of premium escorts tailored to every preference. Our <strong className="text-white">Mumbai escorts service</strong> is designed to deliver an experience that is sophisticated, discreet, and entirely unforgettable.
+              </p>
+
+              <div>
+                <h3 className="text-xl font-bold font-serif text-white mb-3 flex items-center gap-3">
+                  <span className="w-1 h-6 bg-gradient-to-b from-primary to-rose-700 rounded-full inline-block shrink-0" />
+                  Why Choose Our Escorts In Mumbai?
+                </h3>
+                <p>
+                  When it comes to <strong className="text-white">escorts in Mumbai</strong>, quality and discretion are paramount. At Meet in Mumbai, we have built a reputation over the years as the city&apos;s most trusted escort agency. Every <strong className="text-white">Mumbai escort</strong> on our platform is personally verified, professionally screened, and committed to delivering an exceptional experience. We work exclusively with independent adults who choose to offer companionship of their own accord, ensuring every interaction is consensual, respectful, and professional.
+                </p>
+                <p className="mt-3">
+                  Our <strong className="text-white">Mumbai escort service</strong> stands apart because we understand that every client is unique. Whether you need a graceful companion for a corporate dinner, a charming conversationalist for a social event, or private companionship at your hotel, our diverse roster of over 500 verified escorts ensures the perfect match for every occasion and preference.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold font-serif text-white mb-3 flex items-center gap-3">
+                  <span className="w-1 h-6 bg-gradient-to-b from-primary to-rose-700 rounded-full inline-block shrink-0" />
+                  Our Mumbai Escort Services
+                </h3>
+                <p>
+                  Meet in Mumbai offers one of the widest selections of escort categories in India. Our clients choose from <Link href="/actress-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">Actress Escorts</Link>, <Link href="/model-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">Model Escorts</Link>, <Link href="/independent-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">Independent Escorts</Link>, <Link href="/vip-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">VIP Escorts</Link>, <Link href="/russian-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">Russian Escorts</Link>, <Link href="/air-hostess-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">Air Hostess Escorts</Link>, <Link href="/college-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">College Girl Escorts</Link>, and many more. Every profile includes verified photos and a detailed description so you can make a fully informed choice before booking.
+                </p>
+                <p className="mt-3">
+                  All our <strong className="text-white">Mumbai escorts</strong> are independent adults aged 18 and above. We offer both incall and outcall <strong className="text-white">escort services in Mumbai</strong>, and our team matches you with an ideal companion within 30 minutes of your booking request.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold font-serif text-white mb-3 flex items-center gap-3">
+                  <span className="w-1 h-6 bg-gradient-to-b from-primary to-rose-700 rounded-full inline-block shrink-0" />
+                  Areas We Cover in Mumbai
+                </h3>
+                <p>
+                  Our <strong className="text-white">escort service in Mumbai</strong> covers every corner of the city and the Mumbai Metropolitan Region. We provide prompt outcall services to <Link href="/escorts-in/escorts-in-andheri" className="text-yellow-400 hover:text-yellow-300 transition-colors">Andheri</Link>, <Link href="/escorts-in/escorts-in-bandra" className="text-yellow-400 hover:text-yellow-300 transition-colors">Bandra</Link>, <Link href="/escorts-in/escorts-in-juhu" className="text-yellow-400 hover:text-yellow-300 transition-colors">Juhu</Link>, <Link href="/escorts-in/escorts-in-powai" className="text-yellow-400 hover:text-yellow-300 transition-colors">Powai</Link>, <Link href="/escorts-in/escorts-in-worli" className="text-yellow-400 hover:text-yellow-300 transition-colors">Worli</Link>, <Link href="/escorts-in/escorts-in-lower-parel" className="text-yellow-400 hover:text-yellow-300 transition-colors">Lower Parel</Link>, <Link href="/escorts-in/escorts-in-malad" className="text-yellow-400 hover:text-yellow-300 transition-colors">Malad</Link>, <Link href="/escorts-in/escorts-in-borivali" className="text-yellow-400 hover:text-yellow-300 transition-colors">Borivali</Link>, <Link href="/escorts-in/escorts-in-goregaon" className="text-yellow-400 hover:text-yellow-300 transition-colors">Goregaon</Link>, <Link href="/escorts-in/escorts-in-thane" className="text-yellow-400 hover:text-yellow-300 transition-colors">Thane</Link>, <Link href="/escorts-in/escorts-in-navi-mumbai" className="text-yellow-400 hover:text-yellow-300 transition-colors">Navi Mumbai</Link>, <Link href="/escorts-in/escorts-in-nariman-point" className="text-yellow-400 hover:text-yellow-300 transition-colors">Nariman Point</Link>, <Link href="/escorts-in/escorts-in-churchgate" className="text-yellow-400 hover:text-yellow-300 transition-colors">Churchgate</Link>, and all other Mumbai localities.
+                </p>
+                <p className="mt-3">
+                  Our escorts are familiar with all major five-star hotels across BKC, Juhu, Andheri, and South Mumbai. We guarantee arrival within <strong className="text-white">25 minutes</strong> for most locations — making us the fastest <strong className="text-white">escort service in Mumbai</strong>.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold font-serif text-white mb-3 flex items-center gap-3">
+                  <span className="w-1 h-6 bg-gradient-to-b from-primary to-rose-700 rounded-full inline-block shrink-0" />
+                  How to Book a Mumbai Escort
+                </h3>
+                <p>
+                  Booking a <strong className="text-white">Mumbai escort service</strong> through us is simple, fast, and completely discreet. Fill out our <Link href="/book-now" className="text-yellow-400 hover:text-yellow-300 transition-colors">Book Now form</Link>, call us at <a href="tel:+919038976363" className="text-yellow-400 hover:text-yellow-300 transition-colors">+91-9038976363</a>, or message us on WhatsApp. Our team confirms your booking within 30 minutes.
+                </p>
+                <p className="mt-3">
+                  There is <strong className="text-white">no advance payment required</strong>. Payment is always made in cash after the escort arrives at your location and you are satisfied with the introduction. Our transparent pricing ranges from ₹8,000 to ₹50,000 depending on the companion, duration, and service required.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold font-serif text-white mb-3 flex items-center gap-3">
+                  <span className="w-1 h-6 bg-gradient-to-b from-primary to-rose-700 rounded-full inline-block shrink-0" />
+                  Safety, Privacy &amp; Discretion
+                </h3>
+                <p>
+                  We take the safety of both clients and escorts with absolute seriousness. All companions are consenting adults who have been personally verified by our team with ID and photo confirmation. Your identity as a client is kept strictly confidential — we do not share your personal information with any third party and maintain discreet communication at all times.
+                </p>
+                <p className="mt-3">
+                  Our <strong className="text-white">Mumbai escorts agency</strong> operates on a foundation of mutual respect and professionalism. This commitment to integrity is why over <strong className="text-white">5,000 clients</strong> across India continue to choose Meet in Mumbai as their preferred escort service. Whether you are visiting for business or pleasure, we ensure your experience is nothing short of exceptional.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── E-E-A-T ─────────────────────────────────── */}
+      <section className="py-14 bg-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-yellow-500/5" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="label-eyebrow">Why Trust Us</span>
+            <h2 className="text-2xl md:text-3xl font-bold font-serif text-white mt-3 mb-3">Mumbai&apos;s Most Trusted Escort Agency</h2>
+            <div className="section-divider" />
+            <p className="text-gray-400 text-sm">Backed by a decade of experience, thousands of satisfied clients, and an uncompromising standard of quality and privacy.</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            {[
+              { icon: Award, value: '10+ Years', label: 'Experience', desc: 'A decade of premium escort services across Mumbai and India' },
+              { icon: Users, value: '5,000+', label: 'Happy Clients', desc: 'Thousands of verified, satisfied clients across India' },
+              { icon: CheckCircle, value: '500+', label: 'Verified Escorts', desc: 'Hand-picked companions personally vetted by our team' },
+              { icon: Shield, value: '100%', label: 'Confidential', desc: 'Your identity is never shared, disclosed, or stored' },
+              { icon: Zap, value: '25 Min', label: 'Fast Arrival', desc: 'Escorts reach most Mumbai locations within 25 minutes' },
+              { icon: Star, value: '4.9 / 5', label: 'Client Rating', desc: 'Consistently top-rated escort service in Mumbai' },
+              { icon: Clock, value: '24 / 7', label: 'Always Available', desc: 'Round the clock service, every day of the year' },
+              { icon: MapPin, value: '100+', label: 'Cities Covered', desc: 'Serving Mumbai, Pune, Delhi, Bangalore and 100+ cities' },
+            ].map(({ icon: Icon, value, label, desc }, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 hover:border-yellow-500/30 rounded-2xl p-5 text-center transition-all duration-200">
+                <div className="w-10 h-10 bg-gradient-to-br from-primary/20 to-rose-900/20 border border-primary/30 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <Icon size={18} className="text-primary" />
+                </div>
+                <div className="text-lg font-bold font-serif bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent">{value}</div>
+                <div className="text-white text-sm font-semibold mt-1 mb-1.5">{label}</div>
+                <p className="text-gray-500 text-xs leading-snug">{desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
