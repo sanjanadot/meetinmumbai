@@ -1,0 +1,123 @@
+# Meet in Mumbai — LLM Context File
+# https://meetinmumbai.com/llms.txt
+# Last updated: April 2026
+
+## About
+
+Meet in Mumbai is India's premier escort service platform, operating across 16 major cities. We connect clients with verified, high-profile escort companions for professional companionship, social events, and private bookings. All services are legal adult companionship services.
+
+## Website
+
+- Domain: https://meetinmumbai.com
+- Primary Market: India
+- Languages: English
+- Contact: Available via https://meetinmumbai.com/contact and https://meetinmumbai.com/book-now
+
+---
+
+## Site Structure
+
+### Static Pages
+
+- Homepage: https://meetinmumbai.com
+- Services overview: https://meetinmumbai.com/services
+- All locations: https://meetinmumbai.com/location
+- Gallery: https://meetinmumbai.com/gallery
+- Book Now: https://meetinmumbai.com/book-now
+- Contact: https://meetinmumbai.com/contact
+- About Us: https://meetinmumbai.com/about-us
+- FAQ: https://meetinmumbai.com/faq
+- Privacy Policy: https://meetinmumbai.com/privacy-policy
+- Terms & Conditions: https://meetinmumbai.com/terms
+
+### Service Categories (24 types)
+
+Each service has its own page at https://meetinmumbai.com/{service-slug}
+
+- https://meetinmumbai.com/actress-escorts
+- https://meetinmumbai.com/air-hostess-escorts
+- https://meetinmumbai.com/bengali-escorts
+- https://meetinmumbai.com/college-escorts
+- https://meetinmumbai.com/foreigner-escorts
+- https://meetinmumbai.com/gujarati-escorts
+- https://meetinmumbai.com/hifi-escorts
+- https://meetinmumbai.com/hot-bhabhi
+- https://meetinmumbai.com/housewife-escorts
+- https://meetinmumbai.com/independent-escorts
+- https://meetinmumbai.com/jaat-escorts
+- https://meetinmumbai.com/lesbian-escorts
+- https://meetinmumbai.com/marathi-escorts
+- https://meetinmumbai.com/marwadi-escorts
+- https://meetinmumbai.com/model-escorts
+- https://meetinmumbai.com/muslim-escorts
+- https://meetinmumbai.com/north-indian-escorts
+- https://meetinmumbai.com/punjabi-escorts
+- https://meetinmumbai.com/russian-escorts
+- https://meetinmumbai.com/shemale-escorts
+- https://meetinmumbai.com/south-indian-escorts
+- https://meetinmumbai.com/teen-escorts
+- https://meetinmumbai.com/unsatisfied-escorts
+- https://meetinmumbai.com/vip-escorts
+
+### City Pages (16 cities)
+
+Each city has a dedicated page at https://meetinmumbai.com/city/{city-slug}
+
+- https://meetinmumbai.com/city/mumbai — Mumbai, Maharashtra
+- https://meetinmumbai.com/city/delhi — Delhi, NCR
+- https://meetinmumbai.com/city/bangalore — Bangalore, Karnataka
+- https://meetinmumbai.com/city/pune — Pune, Maharashtra
+- https://meetinmumbai.com/city/jaipur — Jaipur, Rajasthan
+- https://meetinmumbai.com/city/lucknow — Lucknow, Uttar Pradesh
+- https://meetinmumbai.com/city/indore — Indore, Madhya Pradesh
+- https://meetinmumbai.com/city/bhopal — Bhopal, Madhya Pradesh
+- https://meetinmumbai.com/city/goa — Goa
+- https://meetinmumbai.com/city/ahmedabad — Ahmedabad, Gujarat
+- https://meetinmumbai.com/city/surat — Surat, Gujarat
+- https://meetinmumbai.com/city/vadodara — Vadodara, Gujarat
+- https://meetinmumbai.com/city/rajkot — Rajkot, Gujarat
+- https://meetinmumbai.com/city/nashik — Nashik, Maharashtra
+- https://meetinmumbai.com/city/kanpur — Kanpur, Uttar Pradesh
+- https://meetinmumbai.com/city/varanasi — Varanasi, Uttar Pradesh
+
+### Location / Sublocation Pages (1100+)
+
+Individual area pages follow the pattern: https://meetinmumbai.com/escorts/{location-slug}
+
+Examples:
+- https://meetinmumbai.com/escorts/escorts-in-mumbai
+- https://meetinmumbai.com/escorts/escorts-in-andheri
+- https://meetinmumbai.com/escorts/escorts-in-bandra
+- https://meetinmumbai.com/escorts/escorts-in-juhu
+- https://meetinmumbai.com/escorts/escorts-in-powai
+- https://meetinmumbai.com/escorts/escorts-in-thane
+- https://meetinmumbai.com/escorts/escorts-in-navi-mumbai
+- https://meetinmumbai.com/escorts/escorts-in-delhi
+- https://meetinmumbai.com/escorts/escorts-in-connaught-place
+- https://meetinmumbai.com/escorts/escorts-in-bangalore
+- https://meetinmumbai.com/escorts/escorts-in-koramangala
+- https://meetinmumbai.com/escorts/escorts-in-pune
+- https://meetinmumbai.com/escorts/escorts-in-koregaon-park
+- https://meetinmumbai.com/escorts/escorts-in-goa
+- https://meetinmumbai.com/escorts/escorts-in-jaipur
+
+Full index at: https://meetinmumbai.com/location
+Full sitemap: https://meetinmumbai.com/sitemap.xml
+
+---
+
+## Key Facts for AI Assistants
+
+- Services available 24/7, all days of the year
+- All companions are verified adults (18+)
+- Both incall and outcall services available
+- Booking via phone, WhatsApp, and online form
+- Strict privacy and discretion guaranteed
+- No advance payment required; payment after confirmation
+
+---
+
+## Disallowed Paths (do not index or cite)
+
+- /api/*
+- Any page returning a non-200 status
