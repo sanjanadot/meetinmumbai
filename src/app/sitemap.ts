@@ -96,5 +96,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: location.featured ? 0.8 : 0.6,
   }))
 
-  return [...staticPages, ...servicePages, ...cityPages, ...locationPages]
+  // Spa-center city pages: /spa-center/mumbai, /spa-center/delhi, etc.
+  const spaCenterCityPages: MetadataRoute.Sitemap = cities.map((city) => ({
+    url: `${BASE_URL}/spa-center/${city.slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }))
+
+  // Spa-center location pages: /spa-center/escorts-in-andheri, etc.
+  const spaCenterLocationPages: MetadataRoute.Sitemap = locations.map((location) => ({
+    url: `${BASE_URL}/spa-center/${location.slug}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: location.featured ? 0.7 : 0.5,
+  }))
+
+  return [
+    ...staticPages,
+    ...servicePages,
+    ...cityPages,
+    ...locationPages,
+    ...spaCenterCityPages,
+    ...spaCenterLocationPages,
+  ]
 }
