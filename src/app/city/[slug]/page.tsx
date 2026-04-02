@@ -5,6 +5,7 @@ import { Phone, CheckCircle, Star, Clock, Shield, Award, Users, Zap, MapPin } fr
 import { notFound } from 'next/navigation'
 import { cities, getCityBySlug, getAllCitySlugs } from '@/data/cities'
 import { services } from '@/data/services'
+import { getLocationsByCityFolder } from '@/data/locations'
 
 /* ─── Static params ─────────────────────────── */
 export async function generateStaticParams() {
@@ -34,6 +35,8 @@ export async function generateMetadata({
 export default function CityPage({ params }: { params: { slug: string } }) {
   const city = getCityBySlug(params.slug)
   if (!city) notFound()
+
+  const cityLocations = getLocationsByCityFolder(city.folder).filter((l) => l.image)
 
   return (
     <>
@@ -148,8 +151,8 @@ export default function CityPage({ params }: { params: { slug: string } }) {
       </section>
 
       {/* ─── CITY LOCATIONS ─────────────────────── */}
-      <section className="py-16 bg-gray-900 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent" />
+      <section className="py-16 bg-gray-950 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-transparent" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="label-eyebrow">Our Locations</span>
@@ -161,15 +164,30 @@ export default function CityPage({ params }: { params: { slug: string } }) {
               Verified escorts serving all major areas and neighbourhoods in {city.name}.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
-            {city.areaLinks.map((area) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-5">
+            {cityLocations.map((loc) => (
               <Link
-                key={area.slug}
-                href={`/escorts-in/${area.slug}`}
-                className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium hover:bg-primary/15 hover:border-primary/50 hover:text-white transition-all duration-200 flex items-center gap-2"
+                key={loc.slug}
+                href={`/escorts-in/${loc.slug}`}
+                className="group rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover bg-white/5"
               >
-                <MapPin size={12} className="text-primary" />
-                {area.name}
+                <div className="overflow-hidden">
+                  <Image
+                    src={loc.image!}
+                    alt={`Escorts in ${loc.name}`}
+                    width={400}
+                    height={560}
+                    style={{ width: '100%', height: 'auto' }}
+                    sizes="(max-width: 640px) 50vw, 25vw"
+                    className="group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-3 sm:p-4 flex items-center gap-2">
+                  <MapPin size={13} className="text-primary shrink-0" />
+                  <h3 className="font-bold text-white font-serif text-sm sm:text-base leading-tight group-hover:text-yellow-400 transition-colors">
+                    {loc.name}
+                  </h3>
+                </div>
               </Link>
             ))}
           </div>
