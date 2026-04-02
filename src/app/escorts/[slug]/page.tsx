@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = `Escorts in ${location.name} | Premium Call Girls in ${location.name}`
   const description = `Best escorts in ${location.name} offering premium call girls services. Book verified, high-profile escorts in ${location.name} for companionship. 24/7 available, discreet.`
-  const url = `https://meetinmumbai.com/escorts-in/${params.slug}`
+  const url = `https://meetinmumbai.com/escorts/${params.slug}`
 
   return {
     title,
@@ -64,7 +64,7 @@ export default function LocationPage({ params }: Props) {
     '@type': 'LocalBusiness',
     name: `Escorts in ${location.name}`,
     alternateName: [`Call Girls in ${location.name}`, `${location.name} Escort Service`],
-    url: `https://meetinmumbai.com/escorts-in/${params.slug}`,
+    url: `https://meetinmumbai.com/escorts/${params.slug}`,
     description: `Premium escorts in ${location.name} offering professional companionship services. Verified call girls available 24/7.`,
     address: {
       '@type': 'PostalAddress',
@@ -320,7 +320,7 @@ export default function LocationPage({ params }: Props) {
               {citySubLocations.map((loc) => (
                 <Link
                   key={loc.slug}
-                  href={`/escorts-in/${loc.slug}`}
+                  href={`/escorts/${loc.slug}`}
                   className="group rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover bg-white/5"
                 >
                   <div className="overflow-hidden">
@@ -630,7 +630,7 @@ export default function LocationPage({ params }: Props) {
               {relatedLocations.map((loc) => (
                 <Link
                   key={loc.slug}
-                  href={`/escorts-in/${loc.slug}`}
+                  href={`/escorts/${loc.slug}`}
                   className="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-primary/40 hover:text-yellow-400 rounded-xl px-4 py-3 text-sm font-medium text-gray-400 transition-all duration-200"
                 >
                   <ArrowRight size={13} className="text-primary shrink-0" />

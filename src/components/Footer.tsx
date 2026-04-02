@@ -35,62 +35,62 @@ const SocialIcons = {
 }
 
 const footerServices = [
-  { href: '/escorts-in/escorts-in-mumbai', label: 'Escorts In Mumbai' },
-  { href: '/escorts-in/escorts-in-airoli', label: 'Escorts In Airoli' },
-  { href: '/escorts-in/escorts-in-borivali', label: 'Escorts In Borivali' },
-  { href: '/escorts-in/escorts-in-malad', label: 'Escorts In Malad' },
-  { href: '/escorts-in/escorts-in-goregaon', label: 'Escorts In Goregaon' },
-  { href: '/escorts-in/escorts-in-andheri', label: 'Escorts In Andheri' },
-  { href: '/escorts-in/escorts-in-bandra', label: 'Escorts In Bandra' },
-  { href: '/escorts-in/escorts-in-dadar', label: 'Escorts In Dadar' },
-  { href: '/escorts-in/escorts-in-mumbai-central', label: 'Escorts In Mumbai Central' },
-  { href: '/escorts-in/escorts-in-thane', label: 'Escorts In Thane' },
-  { href: '/escorts-in/escorts-in-navi-mumbai', label: 'Escorts In Navi Mumbai' },
-  { href: '/escorts-in/escorts-in-vashi', label: 'Escorts In Vashi' },
-  { href: '/escorts-in/escorts-in-pune', label: 'Escorts In Pune' },
-  { href: '/escorts-in/escorts-in-dombivli', label: 'Escorts In Dombivli' },
-  { href: '/escorts-in/escorts-in-diva', label: 'Escorts In Diva' },
-  { href: '/escorts-in/escorts-in-indore', label: 'Escorts In Indore' },
-  { href: '/escorts-in/escorts-in-lucknow', label: 'Escorts In Lucknow' },
+  { href: '/escorts/escorts-in-mumbai', label: 'Escorts In Mumbai' },
+  { href: '/escorts/escorts-in-airoli', label: 'Escorts In Airoli' },
+  { href: '/escorts/escorts-in-borivali', label: 'Escorts In Borivali' },
+  { href: '/escorts/escorts-in-malad', label: 'Escorts In Malad' },
+  { href: '/escorts/escorts-in-goregaon', label: 'Escorts In Goregaon' },
+  { href: '/escorts/escorts-in-andheri', label: 'Escorts In Andheri' },
+  { href: '/escorts/escorts-in-bandra', label: 'Escorts In Bandra' },
+  { href: '/escorts/escorts-in-dadar', label: 'Escorts In Dadar' },
+  { href: '/escorts/escorts-in-mumbai-central', label: 'Escorts In Mumbai Central' },
+  { href: '/escorts/escorts-in-thane', label: 'Escorts In Thane' },
+  { href: '/escorts/escorts-in-navi-mumbai', label: 'Escorts In Navi Mumbai' },
+  { href: '/escorts/escorts-in-vashi', label: 'Escorts In Vashi' },
+  { href: '/escorts/escorts-in-pune', label: 'Escorts In Pune' },
+  { href: '/escorts/escorts-in-dombivli', label: 'Escorts In Dombivli' },
+  { href: '/escorts/escorts-in-diva', label: 'Escorts In Diva' },
+  { href: '/escorts/escorts-in-indore', label: 'Escorts In Indore' },
+  { href: '/escorts/escorts-in-lucknow', label: 'Escorts In Lucknow' },
 ]
 
 const moreServices = [
-  { href: '/escorts-in/escorts-in-kalyan', label: 'Escorts In Kalyan' },
-  { href: '/escorts-in/escorts-in-mulund', label: 'Escorts In Mulund' },
-  { href: '/escorts-in/escorts-in-bhandup', label: 'Escorts In Bhandup' },
-  { href: '/escorts-in/escorts-in-ghatkopar', label: 'Escorts In Ghatkopar' },
-  { href: '/escorts-in/escorts-in-kurla', label: 'Escorts In Kurla' },
-  { href: '/escorts-in/escorts-in-sion', label: 'Escorts In Sion' },
-  { href: '/escorts-in/escorts-in-lower-parel', label: 'Escorts In Lower Parel' },
-  { href: '/escorts-in/escorts-in-prabhadevi', label: 'Escorts In Prabhadevi' },
-  { href: '/escorts-in/escorts-in-matunga', label: 'Escorts In Matunga' },
-  { href: '/escorts-in/escorts-in-mahim', label: 'Escorts In Mahim' },
-  { href: '/escorts-in/escorts-in-khar', label: 'Escorts In Khar' },
-  { href: '/escorts-in/escorts-in-santacruz', label: 'Escorts In Santacruz' },
-  { href: '/escorts-in/escorts-in-juhu', label: 'Escorts In Juhu' },
-  { href: '/escorts-in/escorts-in-vile-parle', label: 'Escorts In Vile Parle' },
-  { href: '/escorts-in/escorts-in-bangalore', label: 'Escorts In Bangalore' },
-  { href: '/escorts-in/escorts-in-bhopal', label: 'Escorts In Bhopal' },
-  { href: '/escorts-in/escorts-in-varanasi', label: 'Escorts In Varanasi' },
+  { href: '/escorts/escorts-in-kalyan', label: 'Escorts In Kalyan' },
+  { href: '/escorts/escorts-in-mulund', label: 'Escorts In Mulund' },
+  { href: '/escorts/escorts-in-bhandup', label: 'Escorts In Bhandup' },
+  { href: '/escorts/escorts-in-ghatkopar', label: 'Escorts In Ghatkopar' },
+  { href: '/escorts/escorts-in-kurla', label: 'Escorts In Kurla' },
+  { href: '/escorts/escorts-in-sion', label: 'Escorts In Sion' },
+  { href: '/escorts/escorts-in-lower-parel', label: 'Escorts In Lower Parel' },
+  { href: '/escorts/escorts-in-prabhadevi', label: 'Escorts In Prabhadevi' },
+  { href: '/escorts/escorts-in-matunga', label: 'Escorts In Matunga' },
+  { href: '/escorts/escorts-in-mahim', label: 'Escorts In Mahim' },
+  { href: '/escorts/escorts-in-khar', label: 'Escorts In Khar' },
+  { href: '/escorts/escorts-in-santacruz', label: 'Escorts In Santacruz' },
+  { href: '/escorts/escorts-in-juhu', label: 'Escorts In Juhu' },
+  { href: '/escorts/escorts-in-vile-parle', label: 'Escorts In Vile Parle' },
+  { href: '/escorts/escorts-in-bangalore', label: 'Escorts In Bangalore' },
+  { href: '/escorts/escorts-in-bhopal', label: 'Escorts In Bhopal' },
+  { href: '/escorts/escorts-in-varanasi', label: 'Escorts In Varanasi' },
 ]
 
 const additionalServices = [
-  { href: '/escorts-in/escorts-in-jogeshwari', label: 'Escorts In Jogeshwari' },
-  { href: '/escorts-in/escorts-in-kandivali', label: 'Escorts In Kandivali' },
-  { href: '/escorts-in/escorts-in-mira-road', label: 'Escorts In Mira Road' },
-  { href: '/escorts-in/escorts-in-bhayandar', label: 'Escorts In Bhayandar' },
-  { href: '/escorts-in/escorts-in-naigaon', label: 'Escorts In Naigaon' },
-  { href: '/escorts-in/escorts-in-vasai', label: 'Escorts In Vasai' },
-  { href: '/escorts-in/escorts-in-nalasopara', label: 'Escorts In Nalasopara' },
-  { href: '/escorts-in/escorts-in-virar', label: 'Escorts In Virar' },
-  { href: '/escorts-in/escorts-in-nariman-point', label: 'Escorts In Nariman Point' },
-  { href: '/escorts-in/escorts-in-churchgate', label: 'Escorts In Churchgate' },
-  { href: '/escorts-in/escorts-in-ghansoli', label: 'Escorts In Ghansoli' },
-  { href: '/escorts-in/escorts-in-airoli', label: 'Escorts In Airoli' },
-  { href: '/escorts-in/escorts-in-worli', label: 'Escorts In Worli' },
-  { href: '/escorts-in/escorts-in-jaipur', label: 'Escorts In Jaipur' },
-  { href: '/escorts-in/escorts-in-wadala', label: 'Escorts In Wadala' },
-  { href: '/escorts-in/escorts-in-parel', label: 'Escorts In Parel' },
+  { href: '/escorts/escorts-in-jogeshwari', label: 'Escorts In Jogeshwari' },
+  { href: '/escorts/escorts-in-kandivali', label: 'Escorts In Kandivali' },
+  { href: '/escorts/escorts-in-mira-road', label: 'Escorts In Mira Road' },
+  { href: '/escorts/escorts-in-bhayandar', label: 'Escorts In Bhayandar' },
+  { href: '/escorts/escorts-in-naigaon', label: 'Escorts In Naigaon' },
+  { href: '/escorts/escorts-in-vasai', label: 'Escorts In Vasai' },
+  { href: '/escorts/escorts-in-nalasopara', label: 'Escorts In Nalasopara' },
+  { href: '/escorts/escorts-in-virar', label: 'Escorts In Virar' },
+  { href: '/escorts/escorts-in-nariman-point', label: 'Escorts In Nariman Point' },
+  { href: '/escorts/escorts-in-churchgate', label: 'Escorts In Churchgate' },
+  { href: '/escorts/escorts-in-ghansoli', label: 'Escorts In Ghansoli' },
+  { href: '/escorts/escorts-in-airoli', label: 'Escorts In Airoli' },
+  { href: '/escorts/escorts-in-worli', label: 'Escorts In Worli' },
+  { href: '/escorts/escorts-in-jaipur', label: 'Escorts In Jaipur' },
+  { href: '/escorts/escorts-in-wadala', label: 'Escorts In Wadala' },
+  { href: '/escorts/escorts-in-parel', label: 'Escorts In Parel' },
 ]
 
 export default function Footer() {
@@ -102,8 +102,8 @@ export default function Footer() {
   const citySlug = cityMatch?.[1] ?? null
   const cityInfo = citySlug ? getCityBySlug(citySlug) : null
 
-  // Detect sublocation page: /escorts-in/[slug]
-  const sublocMatch = pathname?.match(/^\/escorts-in\/([^/]+)$/)
+  // Detect sublocation page: /escorts/[slug]
+  const sublocMatch = pathname?.match(/^\/escorts\/([^/]+)$/)
   const sublocSlug = sublocMatch?.[1] ?? null
   const sublocCityInfo = sublocSlug
     ? (() => {
@@ -125,7 +125,7 @@ export default function Footer() {
   if (activeCityInfo) {
     const allCityLocs = getLocationsByCityFolder(activeCityInfo.folder)
       .filter((l) => l.image)
-      .map((l) => ({ href: `/escorts-in/${l.slug}`, label: `Escorts In ${l.name}` }))
+      .map((l) => ({ href: `/escorts/${l.slug}`, label: `Escorts In ${l.name}` }))
     const third = Math.ceil(allCityLocs.length / 3)
     col1 = allCityLocs.slice(0, third)
     col2 = allCityLocs.slice(third, third * 2)

@@ -57,7 +57,7 @@ export default function LocationPage() {
                 {locs.map((loc) => (
                   <Link
                     key={loc.slug}
-                    href={`/escorts-in/${loc.slug}`}
+                    href={`/escorts/${loc.slug}`}
                     className="flex items-center gap-2 bg-white/5 border border-white/10 hover:border-primary/40 hover:text-yellow-400 rounded-xl px-4 py-3 text-sm font-medium text-gray-400 transition-all duration-200 hover:bg-white/10"
                   >
                     <MapPin size={14} className="text-primary shrink-0" />

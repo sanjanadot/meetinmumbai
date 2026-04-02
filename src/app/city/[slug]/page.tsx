@@ -168,7 +168,7 @@ export default function CityPage({ params }: { params: { slug: string } }) {
             {cityLocations.map((loc) => (
               <Link
                 key={loc.slug}
-                href={`/escorts-in/${loc.slug}`}
+                href={`/escorts/${loc.slug}`}
                 className="group rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover bg-white/5"
               >
                 <div className="overflow-hidden">
@@ -279,7 +279,7 @@ export default function CityPage({ params }: { params: { slug: string } }) {
                   {city.areaLinks.map((area) => (
                     <Link
                       key={area.slug}
-                      href={`/escorts-in/${area.slug}`}
+                      href={`/escorts/${area.slug}`}
                       className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-400 text-xs hover:bg-primary/15 hover:border-primary/40 hover:text-white transition-all duration-200"
                     >
                       Escorts in {area.name}
