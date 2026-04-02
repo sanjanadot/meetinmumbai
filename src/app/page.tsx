@@ -234,31 +234,38 @@ export default function HomePage() {
       </section>
 
       {/* ─── SERVICES GRID ─────────────────────────── */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-14">
-            <span className="text-primary text-sm font-semibold uppercase tracking-[4px] block mb-3">Explore</span>
-            <h2 className="text-4xl md:text-5xl font-bold font-serif text-gray-900 mb-3">Our Escort Services</h2>
+      <section className="py-20 bg-gray-950 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-transparent" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="label-eyebrow">Explore</span>
+            <h2 className="text-3xl md:text-4xl font-bold font-serif text-white mt-3 mb-3">Our Escort Services</h2>
             <div className="section-divider" />
-            <p className="text-gray-500 mt-2 max-w-xl mx-auto text-sm">Explore our wide range of premium escort services tailored to your preferences.</p>
+            <p className="text-gray-400">Explore our wide range of premium escort services tailored to your preferences.</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5">
             {services.map((service) => (
               <Link
                 key={service.slug}
                 href={`/${service.slug}`}
-                className="group relative overflow-hidden rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                className="group rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover bg-white/5"
               >
-                <div className="relative h-32 overflow-hidden">
+                <div className="overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.shortName}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    width={400}
+                    height={560}
+                    style={{ width: '100%', height: 'auto' }}
+                    sizes="(max-width: 640px) 50vw, 25vw"
+                    className="group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <p className="text-xs font-semibold text-center px-2 py-2.5 text-gray-700 group-hover:text-primary transition-colors">{service.shortName}</p>
+                <div className="p-3 sm:p-4">
+                  <h3 className="font-bold text-white font-serif text-sm sm:text-base leading-tight group-hover:text-yellow-400 transition-colors">
+                    {service.shortName}
+                  </h3>
+                </div>
               </Link>
             ))}
           </div>
