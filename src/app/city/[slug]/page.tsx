@@ -213,60 +213,128 @@ export default function CityPage({ params }: { params: { slug: string } }) {
               </h2>
               <div className="section-divider" />
             </div>
-            <div className="space-y-8 text-gray-400 leading-relaxed">
-              <p>{city.seoContent.intro}</p>
 
+            <div className="space-y-10 text-gray-400 leading-relaxed text-[15px]">
+
+              {/* Intro */}
+              <p>
+                {city.seoContent.intro} At <strong className="text-white">Meet in Mumbai</strong>, we have built India&apos;s most trusted escort platform — one that connects genuine, verified companions with discerning clients who value quality, privacy, and professionalism above everything else. Our <strong className="text-white">escorts in {city.name}</strong> are available 24 hours a day, 7 days a week, for both incall and outcall arrangements across the city.
+              </p>
+
+              {/* Why Choose */}
               <div>
-                <h3 className="text-xl font-bold font-serif text-white mb-3 flex items-center gap-3">
+                <h3 className="text-xl font-bold font-serif text-white mb-4 flex items-center gap-3">
                   <span className="w-1 h-6 bg-gradient-to-b from-primary to-rose-700 rounded-full inline-block shrink-0" />
                   Why Choose Our Escorts In {city.name}?
                 </h3>
                 <p>{city.seoContent.whyUs}</p>
+                <p className="mt-4">
+                  What sets our <strong className="text-white">{city.name} escort service</strong> apart from others is our rigorous verification process. Every companion on our platform has been personally interviewed, ID-verified, and photographed by our team — so you always get exactly what you see in the profile. We do not work with fake listings, recycled photographs, or unverified individuals. When you book with us, you can be confident that the experience will be genuine, satisfying, and completely discreet.
+                </p>
+                <p className="mt-4">
+                  We also understand that different clients have different needs. Whether you are looking for a sophisticated companion for a corporate dinner, a charming plus-one for a social event, or a private meeting at your hotel or residence, our diverse roster of <strong className="text-white">escorts in {city.name}</strong> ensures we have the perfect match for every occasion.
+                </p>
               </div>
 
+              {/* Services */}
               <div>
-                <h3 className="text-xl font-bold font-serif text-white mb-3 flex items-center gap-3">
+                <h3 className="text-xl font-bold font-serif text-white mb-4 flex items-center gap-3">
                   <span className="w-1 h-6 bg-gradient-to-b from-primary to-rose-700 rounded-full inline-block shrink-0" />
                   Our {city.name} Escort Services
                 </h3>
                 <p>
-                  Meet in Mumbai offers a wide selection of escort categories in {city.name}. Our clients choose from{' '}
+                  Meet in Mumbai offers one of the widest selections of escort categories available anywhere in India. Our clients in {city.name} can choose from{' '}
                   <Link href="/actress-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">Actress Escorts</Link>,{' '}
                   <Link href="/model-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">Model Escorts</Link>,{' '}
                   <Link href="/independent-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">Independent Escorts</Link>,{' '}
                   <Link href="/vip-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">VIP Escorts</Link>,{' '}
                   <Link href="/russian-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">Russian Escorts</Link>,{' '}
                   <Link href="/air-hostess-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">Air Hostess Escorts</Link>,{' '}
-                  and many more. All profiles include verified photos.
+                  <Link href="/college-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">College Girl Escorts</Link>,{' '}
+                  <Link href="/housewife-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">Housewife Escorts</Link>,{' '}
+                  <Link href="/punjabi-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">Punjabi Escorts</Link>,{' '}
+                  <Link href="/south-indian-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">South Indian Escorts</Link>,{' '}
+                  <Link href="/north-indian-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">North Indian Escorts</Link>,{' '}
+                  <Link href="/foreigner-escorts" className="text-yellow-400 hover:text-yellow-300 transition-colors">Foreigner Escorts</Link>, and many more.
+                </p>
+                <p className="mt-4">
+                  Every profile on our platform includes verified recent photographs, a complete description of the companion, and accurate pricing information — so you can make a fully informed decision before confirming your booking. All our <strong className="text-white">{city.name} escorts</strong> are independent consenting adults aged 18 and above who have chosen to offer their companionship professionally.
+                </p>
+                <p className="mt-4">
+                  We offer both <strong className="text-white">incall</strong> and <strong className="text-white">outcall escort services in {city.name}</strong>. For incall, you visit the companion at a private, comfortable location of her choice. For outcall, she travels to your hotel room, serviced apartment, or private residence. Our team coordinates everything seamlessly to ensure a smooth, stress-free experience from start to finish.
                 </p>
               </div>
 
+              {/* Areas */}
               <div>
-                <h3 className="text-xl font-bold font-serif text-white mb-3 flex items-center gap-3">
+                <h3 className="text-xl font-bold font-serif text-white mb-4 flex items-center gap-3">
                   <span className="w-1 h-6 bg-gradient-to-b from-primary to-rose-700 rounded-full inline-block shrink-0" />
                   Areas We Cover in {city.name}
                 </h3>
                 <p>{city.seoContent.areas}</p>
+                <p className="mt-4">
+                  Our <strong className="text-white">escort service in {city.name}</strong> is designed to be as accessible as possible. Whether you are staying in a five-star hotel in the city centre, a business hotel near an industrial or IT zone, or a private residence in the suburbs, we send our companions directly to your location. There is no need to travel — simply call us, confirm your address, and we handle everything else.
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {city.areaLinks.map((area) => (
+                    <Link
+                      key={area.slug}
+                      href={`/escorts-in/${area.slug}`}
+                      className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-400 text-xs hover:bg-primary/15 hover:border-primary/40 hover:text-white transition-all duration-200"
+                    >
+                      Escorts in {area.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
 
+              {/* Booking */}
               <div>
-                <h3 className="text-xl font-bold font-serif text-white mb-3 flex items-center gap-3">
+                <h3 className="text-xl font-bold font-serif text-white mb-4 flex items-center gap-3">
                   <span className="w-1 h-6 bg-gradient-to-b from-primary to-rose-700 rounded-full inline-block shrink-0" />
                   How to Book a {city.name} Escort
                 </h3>
                 <p>{city.seoContent.booking}</p>
-                <p className="mt-3">
-                  There is <strong className="text-white">no advance payment required</strong>. Payment is always made in cash after the escort arrives at your location. Transparent pricing from ₹8,000 to ₹50,000.
+                <p className="mt-4">
+                  Our booking process has been designed to be fast, simple, and completely discreet. You do not need to register an account or provide any sensitive personal information. Simply reach out via call or WhatsApp and tell us your requirements — city, preferred companion type, date, time, and location. Our team matches you with the best available companion and confirms your booking, typically within 30 minutes.
+                </p>
+                <p className="mt-4">
+                  There is <strong className="text-white">no advance payment required</strong> under any circumstances. We accept <strong className="text-white">cash payment only</strong>, made directly after the companion arrives at your location and you are fully satisfied with the introduction. Our transparent pricing starts from <strong className="text-white">₹8,000</strong> and goes up to <strong className="text-white">₹50,000</strong> depending on the companion type, duration of companionship, and any specific requirements you may have. There are no hidden charges — the price quoted is the price you pay.
                 </p>
               </div>
 
+              {/* Types of clients */}
               <div>
-                <h3 className="text-xl font-bold font-serif text-white mb-3 flex items-center gap-3">
+                <h3 className="text-xl font-bold font-serif text-white mb-4 flex items-center gap-3">
+                  <span className="w-1 h-6 bg-gradient-to-b from-primary to-rose-700 rounded-full inline-block shrink-0" />
+                  Who Uses Our {city.name} Escort Service?
+                </h3>
+                <p>
+                  Our clients in {city.name} come from every walk of life. A significant portion are business professionals — executives, entrepreneurs, and senior managers who travel frequently and value discretion above all else. Others are tourists and visitors exploring {city.name} for the first time who want a knowledgeable, enjoyable companion to share their time with. We also serve a large base of local {city.name} residents who simply appreciate premium companionship delivered to their home or hotel.
+                </p>
+                <p className="mt-4">
+                  Regardless of who you are or why you are seeking a companion, we treat every client with the same standard of respect, professionalism, and confidentiality. We never judge, never pry, and never compromise your privacy. All that matters to us is delivering an exceptional, memorable experience every single time.
+                </p>
+              </div>
+
+              {/* Safety */}
+              <div>
+                <h3 className="text-xl font-bold font-serif text-white mb-4 flex items-center gap-3">
                   <span className="w-1 h-6 bg-gradient-to-b from-primary to-rose-700 rounded-full inline-block shrink-0" />
                   Safety, Privacy &amp; Discretion
                 </h3>
                 <p>{city.seoContent.safety}</p>
+                <p className="mt-4">
+                  We take the safety of both our clients and companions with absolute seriousness. Every companion is a consenting adult who has been personally verified by our team with government-issued ID and recent photo confirmation. We do not work with trafficked individuals, under-age persons, or anyone who has not freely and willingly chosen this profession. Our agency operates with a strict code of ethics that prioritises the wellbeing and autonomy of every companion on our platform.
+                </p>
+                <p className="mt-4">
+                  From the client side, your identity and contact details are stored securely and never shared with any third party — including the companion herself, unless absolutely necessary for the booking logistics. All communication through our platform is end-to-end discreet. We do not send marketing messages to your number, do not appear on your bank statement, and do not leave any digital footprint that could compromise your privacy.
+                </p>
+                <p className="mt-4">
+                  This commitment to integrity and safety is why over <strong className="text-white">5,000 clients</strong> across India continue to trust <strong className="text-white">Meet in Mumbai</strong> as their preferred escort service — not just in Mumbai, but now in {city.name} and across the country.
+                </p>
               </div>
+
             </div>
           </div>
         </div>
