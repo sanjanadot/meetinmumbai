@@ -297,6 +297,68 @@ export default function LocationPage({ params }: Props) {
         </div>
       </section>
 
+      {/* ── OUR LOCATIONS ── */}
+      <section className="py-16 bg-gray-900 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-transparent to-transparent" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="label-eyebrow">Our Locations</span>
+            <h2 className="text-3xl md:text-4xl font-bold font-serif text-white mt-3 mb-3">Escorts Available Across India</h2>
+            <div className="section-divider" />
+            <p className="text-gray-400">Premium escort services in all major cities. Select your city to book instantly.</p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-5">
+            {([
+              { name: 'Mumbai', slug: 'mumbai', image: '/images/mumbai/escorts-in-mumbai.webp' },
+              { name: 'Delhi', slug: 'delhi', image: '/images/delhi/escorts-in-delhi.webp' },
+              { name: 'Bangalore', slug: 'bangalore', image: '/images/bangalore/escorts-in-bangalore.webp' },
+              { name: 'Pune', slug: 'pune', image: '/images/pune/escorts-in-pune.webp' },
+              { name: 'Jaipur', slug: 'jaipur', image: '/images/jaipur/escorts-in-jaipur.webp' },
+              { name: 'Lucknow', slug: 'lucknow', image: '/images/lucknow/escorts-in-lucknow.webp' },
+              { name: 'Indore', slug: 'indore', image: '/images/indore/escorts-in-indore.webp' },
+              { name: 'Bhopal', slug: 'bhopal', image: '/images/bhopal/escorts-in-bhopal.webp' },
+              { name: 'Goa', slug: 'goa', image: '/images/goa/escorts-in-goa.webp' },
+              { name: 'Ahmedabad', slug: 'ahmedabad', image: '/images/ahmedabad/escorts-in-ahmedabad.webp' },
+              { name: 'Surat', slug: 'surat', image: '/images/surat/escorts-in-surat.webp' },
+              { name: 'Vadodara', slug: 'vadodara', image: '/images/vadodara/escorts-in-vadodara.webp' },
+              { name: 'Rajkot', slug: 'rajkot', image: '/images/rajkot/escorts-in-rajkot.webp' },
+              { name: 'Nashik', slug: 'nashik', image: '/images/nashik/escorts-in-nashik.webp' },
+              { name: 'Kanpur', slug: 'kanpur', image: '/images/kanpur/escorts-in-kanpur.webp' },
+              { name: 'Varanasi', slug: 'varanasi', image: '/images/varanasi/escorts-in-varanasi.webp' },
+            ] as { name: string; slug: string; image: string }[]).map((c) => (
+              <Link
+                key={c.slug}
+                href={`/city/${c.slug}`}
+                className="group rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover bg-white/5"
+              >
+                <div className="overflow-hidden">
+                  <Image
+                    src={c.image}
+                    alt={`Escorts in ${c.name}`}
+                    width={400}
+                    height={560}
+                    style={{ width: '100%', height: 'auto' }}
+                    sizes="(max-width: 640px) 50vw, 25vw"
+                    className="group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-3 sm:p-4 flex items-center gap-2">
+                  <MapPin size={13} className="text-primary shrink-0" />
+                  <h3 className="font-bold text-white font-serif text-sm sm:text-base leading-tight group-hover:text-yellow-400 transition-colors">
+                    {c.name}
+                  </h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/location" className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-medium text-sm transition-colors">
+              View all locations across India →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── SEO CONTENT ── */}
       <section className="py-16 bg-gray-950">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -437,6 +499,51 @@ export default function LocationPage({ params }: Props) {
               </p>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section className="py-16 bg-gray-900 relative overflow-hidden">
+        <div className="absolute -top-40 right-0 w-96 h-96 bg-primary/8 rounded-full filter blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-yellow-500/5 rounded-full filter blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <span className="label-eyebrow">FAQ</span>
+            <h2 className="text-3xl md:text-4xl font-bold font-serif text-white mt-3 mb-3">Frequently Asked Questions</h2>
+            <div className="section-divider" />
+            <p className="text-gray-400">Everything you need to know about escort services in {location.name}.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 max-w-5xl mx-auto">
+            {[
+              { q: `How do I book an escort in ${location.name}?`, a: `Fill out our Book Now form or call us at +91-9038976363. Our team confirms your ${location.name} booking within 30 minutes.` },
+              { q: 'Are your escorts verified?', a: 'Yes, all escorts undergo thorough background checks and personal interviews before being listed on our platform.' },
+              { q: 'What is the pricing?', a: 'Prices range from ₹8,000 to ₹50,000 based on the companion type, duration, and service required.' },
+              { q: 'Do you offer incall and outcall?', a: `Yes, both incall and outcall services are available in ${location.name}. Please specify your preference when booking.` },
+              { q: `How quickly can an escort reach me in ${location.name}?`, a: `Escorts typically arrive within 25–30 minutes in ${location.name}. ETA is confirmed at the time of booking.` },
+              { q: 'Is my information kept confidential?', a: 'Absolutely. All personal details are kept strictly confidential and never shared with any third party.' },
+              { q: 'Which cities do you serve?', a: 'We serve Mumbai, Pune, Delhi, Bangalore, Jaipur, Lucknow, Indore, Bhopal, Goa, Ahmedabad, and 100+ cities.' },
+              { q: 'What payment methods do you accept?', a: 'Cash only, paid at the time of the booking. No advance payment or bank transfer required.' },
+              { q: 'Can I choose a specific escort?', a: 'Yes, browse our gallery and select your preferred companion. We confirm based on availability.' },
+              { q: 'Are there age restrictions?', a: 'All escorts and clients must be at least 18 years old. We strictly adhere to all applicable laws.' },
+              { q: 'What if I need to cancel?', a: 'Inform us as early as possible. Cancellations under 2 hours notice may incur a nominal inconvenience fee.' },
+              { q: 'Do you operate 24/7?', a: 'Yes, our services are available round the clock, every day of the year including late nights and holidays.' },
+            ].map((faq, i) => (
+              <div key={i} className="group flex gap-4 bg-white/5 border border-white/10 hover:border-primary/40 hover:bg-white/8 rounded-2xl p-5 transition-all duration-200">
+                <div className="shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-rose-700 flex items-center justify-center text-white text-xs font-bold font-serif mt-0.5">
+                  {i + 1}
+                </div>
+                <div>
+                  <h3 className="font-semibold text-white mb-1.5 text-sm sm:text-base group-hover:text-yellow-400 transition-colors">{faq.q}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{faq.a}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/faq" className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-semibold text-sm transition-colors">
+              View all FAQs →
+            </Link>
           </div>
         </div>
       </section>
