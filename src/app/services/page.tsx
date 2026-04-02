@@ -39,28 +39,34 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="py-12 bg-gray-900">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5">
             {services.map((service) => (
               <Link
                 key={service.slug}
                 href={`/${service.slug}`}
-                className="group bg-white/5 border border-white/10 hover:border-primary/40 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+                className="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover"
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative aspect-[2/3] overflow-hidden">
                   <Image
                     src={service.image}
                     alt={service.name}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover object-top group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-bold text-white mb-2 font-serif group-hover:text-yellow-400 transition-colors">{service.name}</h3>
-                  <p className="text-gray-500 text-sm mb-3">{service.description}</p>
-                  <span className="flex items-center gap-1 text-primary text-sm font-medium">
-                    View Details <ArrowRight size={14} />
-                  </span>
+                  {/* Permanent subtle gradient for legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                  {/* Hover glow overlay */}
+                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Text at bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
+                    <h3 className="font-bold text-white font-serif text-sm sm:text-base leading-tight group-hover:text-yellow-400 transition-colors">
+                      {service.name}
+                    </h3>
+                    <span className="flex items-center gap-1 text-primary text-xs font-medium mt-1 translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                      View Details <ArrowRight size={11} />
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}
